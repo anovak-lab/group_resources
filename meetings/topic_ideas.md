@@ -20,6 +20,8 @@
 - Doxygen
 - Sphinx
 - markdown
+- scp
+- SSH keys
 
 # Coding Skills
 
