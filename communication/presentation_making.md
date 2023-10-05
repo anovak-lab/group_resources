@@ -62,7 +62,7 @@ their focus on listening to you, with the other half focusing on the slides
   some people will be shy and just not raise their hand even if it applies to them).
   Amusing graphics/ridiculous scales of problems (e.g. how many elements would you have
   in a full-core HTGR mesh if you explicitly meshed all TRISOs, and how that equates to
-  # of Frontier computers, etc) can be useful.
+  number of Frontier computers, etc) can be useful.
 - When it comes to Q&A, do not make anything up if you do not know. It is acceptable
   to say "we plan to explore that in future work," "I would like to follow up on
   that topic after this session," or "I will defer to my colleage, X, who led that
