@@ -5,8 +5,8 @@
   xmax = 1.0
   ymin = 0.0
   ymax = 1.0
-  nx = 5
-  ny = 5
+  nx = 10
+  ny = 10
 []
 
 [Variables]
@@ -46,6 +46,7 @@
   type = Steady
 []
 
+# Assess scalar values in the domain
 [Postprocessors]
   [max_T]
     type = ElementExtremeValue
@@ -53,6 +54,19 @@
   []
 []
 
+# But even better is to look at line plots
+[VectorPostprocessors]
+  [vertical]
+    type = LineValueSampler
+    variable = 'T'
+    start_point = '0.5 0.0 0.0'
+    end_point = '0.5 1.0 0.0'
+    num_points = 10
+    sort_by = 'y'
+  []
+[]
+
 [Outputs]
   exodus = true
+  csv = true
 []
