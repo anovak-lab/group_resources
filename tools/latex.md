@@ -5,7 +5,26 @@ Latex is an extremely useful tool for rendering text.
 ### Some Useful Packages
 
 - `siunitx` for formatting of units; simply type the unit in long form spelling, and it will be rendered with the proper superscripts, e.g. `\si{\kilo\gram\per\second\per\meter}`
-- `subcaption` is useful for making subfigures, each with their own caption. It's a good idea for each subfigure to be the same height, which you can control with the size of the subfigure (i.e. instead of doing `width=0.3\linewidth`, you can also use heights like `width=3cm`).
+- `subcaption` is useful for making subfigures, each with their own caption. It's a good idea for each subfigure to be the same height, which you can control with the size of the subfigure (i.e. instead of doing `width=0.3\linewidth`, you can also use heights like `width=3cm`). Below is an example for a subfigure with two images.
+
+```
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+    \includegraphics[width=\textwidth]{figures/radial_comparison_1.png}
+    \caption{Relative difference, nominal power}
+    \end{subfigure}
+    \hspace{1cm}
+    \begin{subfigure}{0.35\textwidth}
+    \includegraphics[width=\textwidth]{figures/radial_comparison_2.png}
+    \caption{Relative difference, overpower}
+    \end{subfigure}
+    \caption{Relative difference ($(P_O-P_G)/P_O$) in pinwise axially-averaged power.}
+    \label{fig:radial_comparison}
+\end{figure}
+```
+
+
 
 ### Glossaries
 
@@ -37,7 +56,11 @@ You should list the author names with first/middle names abbreviated, and with "
 {\bibliography{biblio}}
 ```
 
-where your citation file would be named `biblio.bib`, for example.
+where your citation file would be named `biblio.bib`, for example. Miscellaneous tips:
+
+- When you write multiple citations together, be sure to just separate them via commas in a single `\cite` command, like `\cite{novak1,novak2}`.
+- If the same information is present in both conference papers and journal articles, it is preferable to cite the journal article. Oftentimes, only the attendees to a conference can easily obtain the conference papers, whereas journal articles also have undergone more rigorous peer review.
+- Always try to cite the "root" reference. For example, if you want to cite the BEAVRS benchmark specifications, you should not cite a paper which _models_ the BEAVRS benchmark. You should cite the actual specifications.
 
 #### Journal Article
 
@@ -98,3 +121,4 @@ For journal articles, please include the DOI field. Any special characters in pe
 ### Miscellaneous Tips
 
 - To put a subscript on text (like to write UO2), you do not need to put the entire expression in math mode. Try `UO$_2$`.
+- Double quotes must be typed as two back-ticks! The double quote (") will not render the proper orientation.
