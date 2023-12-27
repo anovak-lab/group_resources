@@ -5,8 +5,8 @@
   xmax = 1.0
   ymin = 0.0
   ymax = 1.0
-  nx = 10
-  ny = 10
+  nx = 8
+  ny = 8
 []
 
 [Variables]
@@ -14,10 +14,23 @@
   []
 []
 
+[AuxVariables]
+  [power]
+  []
+[]
+
+[AuxKernels]
+  [power]
+    type = FunctionAux
+    variable = power
+    function = heat_source
+  []
+[]
+
 [Functions]
   [heat_source]
     type = ParsedFunction
-    value = 'sin(x / 0.1) * cos(y / 0.1) * 1e6'
+    value = 'sin(x / 0.1) * cos(y / 0.1)'
   []
 []
 
