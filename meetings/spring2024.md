@@ -1,6 +1,6 @@
 # Spring 2024 Semester
 
-- January 18:
+- January 18: semester welcome, unit testing
 - January 25:
 - February 1:
 - February 8:
