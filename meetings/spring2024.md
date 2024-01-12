@@ -3,7 +3,7 @@
 - January 18: semester welcome, unit testing
 - January 25:
 - February 1:
-- February 8:
+- February 8: CANCELLED - Prof. Novak at NCSU
 - February 15:
 - February 22:
 - February 29:
