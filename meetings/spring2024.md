@@ -13,6 +13,6 @@
 - March 28:
 - April 4: CANCELLED - student ANS conference
 - April 11:
-- April 18:
+- April 18: Aya: Physor practice
 - April 25: CANCELLED - Physor conference
 - May 2:
