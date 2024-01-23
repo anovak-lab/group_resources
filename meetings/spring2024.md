@@ -1,7 +1,7 @@
 # Spring 2024 Semester
 
 - January 18: semester welcome, Pinchot walk-through (April)
-- January 25: unit testing (April)
+- January 25: Cardinal tutorial: OpenMC pincell (April)
 - February 1:
 - February 8: CANCELLED - Prof. Novak at NCSU
 - February 15:
