@@ -1,8 +1,8 @@
 # Spring 2024 Semester
 
 - January 18: semester welcome, Pinchot walk-through (April)
-- January 25: Cardinal tutorial: OpenMC pincell (April)
-- February 1:
+- January 25: Beginner Cardinal tutorial: OpenMC pincell (April)
+- February 1: Intermediate Cardinal tutorial: OpenMC pincell (April)
 - February 8: CANCELLED - Prof. Novak at NCSU
 - February 15:
 - February 22:
