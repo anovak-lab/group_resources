@@ -10,9 +10,9 @@
 - March 7:
 - March 14: CANCELLED - spring break
 - March 21: Ansh (TBD)
-- March 28:
+- March 28: ANS student conference practice (Aya, Mahmoud)
 - April 4: CANCELLED - student ANS conference
-- April 11:
+- April 11: Mahmoud: Physor practice
 - April 18: Aya: Physor practice
 - April 25: CANCELLED - Physor conference
-- May 2:
+- May 2: CANCELLED - reading day
