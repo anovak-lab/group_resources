@@ -7,7 +7,7 @@
 - February 15:
 - February 22:
 - February 29:
-- March 7:
+- March 7:Michael - A slug flow model with concave interface for gas-liquid flow in horizontal pipes.
 - March 14: CANCELLED - spring break
 - March 21: Ansh (TBD)
 - March 28: ANS student conference practice (Aya, Mahmoud)
