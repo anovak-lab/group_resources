@@ -6,7 +6,7 @@
 - February 8: CANCELLED - Prof. Novak at NCSU
 - February 15:
 - February 22:
-- February 29:
+- February 29: MontePy (Micah Gale [INL] w/ Travis)
 - March 7:Michael - A slug flow model with concave interface for gas-liquid flow in horizontal pipes.
 - March 14: CANCELLED - spring break
 - March 21: Ansh (TBD)
