@@ -122,3 +122,9 @@ For journal articles, please include the DOI field. Any special characters in pe
 
 - To put a subscript on text (like to write UO2), you do not need to put the entire expression in math mode. Try `UO$_2$`.
 - Double quotes must be typed as two back-ticks! The double quote (") will not render the proper orientation.
+
+### Writing Tips
+
+- Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
+- Only capitalize names and proper titles
+- Do not capitalize elements on the periodic table (e.g., tritium not Tritium)
