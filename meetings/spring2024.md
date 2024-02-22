@@ -4,8 +4,8 @@
 - January 25: Beginner Cardinal tutorial: OpenMC pincell (April)
 - February 1: Intermediate Cardinal tutorial: OpenMC pincell (April)
 - February 8: CANCELLED - Prof. Novak at NCSU
-- February 15:
-- February 22:
+- February 15: Intermediate Cardinal tutorial: Picard iteration (April)
+- February 22: MOOSE tutorial: transfers, DAGMC tutorial (April)
 - February 29: MontePy (Micah Gale [INL] w/ Travis)
 - March 7:Michael - A slug flow model with concave interface for gas-liquid flow in horizontal pipes.
 - March 14: CANCELLED - spring break
