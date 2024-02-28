@@ -6,8 +6,8 @@
 - February 8: CANCELLED - Prof. Novak at NCSU
 - February 15: Intermediate Cardinal tutorial: Picard iteration (April)
 - February 22: MOOSE tutorial: transfers, DAGMC tutorial (April)
-- February 29: MontePy (Micah Gale [INL] w/ Travis)
-- March 7:Michael - A slug flow model with concave interface for gas-liquid flow in horizontal pipes.
+- February 29: Michael - A slug flow model with concave interface for gas-liquid flow in horizontal pipes.
+- March 7: MontePy (Micah Gale [INL] w/ Travis)
 - March 14: CANCELLED - spring break
 - March 21: Ansh (TBD)
 - March 28: ANS student conference practice (Aya, Mahmoud)
