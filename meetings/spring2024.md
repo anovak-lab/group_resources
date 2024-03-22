@@ -9,7 +9,7 @@
 - February 29: MontePy (Micah Gale [INL] w/ Travis)
 - March 7:Michael - A slug flow model with concave interface for gas-liquid flow in horizontal pipes.
 - March 14: CANCELLED - spring break
-- March 21: Ansh (TBD)
+- March 21: Using debuggers with Cardinal (Ansh)
 - March 28: ANS student conference practice (Aya, Mahmoud)
 - April 4: CANCELLED - student ANS conference
 - April 11: Mahmoud: Physor practice
