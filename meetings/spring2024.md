@@ -12,7 +12,7 @@
 - March 21: Using debuggers with Cardinal (Ansh)
 - March 28: ANS student conference practice (Aya, Mahmoud)
 - April 4: CANCELLED - student ANS conference
-- April 11: Mahmoud: Physor practice
-- April 18: Aya: Physor practice
+- April 11: CANCELLED - free day
+- April 18: Mahmoud and Aya: Physor practice
 - April 25: CANCELLED - Physor conference
 - May 2: CANCELLED - reading day
