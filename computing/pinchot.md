@@ -11,6 +11,8 @@ If you are not on campus internet, you will need to be on the UIUC VPN. Instruct
 [here](https://answers.uillinois.edu/illinois/page.php?id=47629). If you already have a VPN
 client, simply enter `vpn.illinois.edu` and "Connect."
 
+Once you are logged in, you will be in your home directory. Prof. Novak compiles various code projects in a shared location at `/shared/data`.
+
 ## Python API
 
 You will need to install the OpenMC Python API in your user space, even if you are using
