@@ -1,0 +1,3 @@
+[submodule "demos/pixi-tutorial"]
+	path = demos/pixi-tutorial
+	url = https://github.com/jspecht3/pixi-tutorial
