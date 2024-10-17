@@ -9,7 +9,7 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
-      time: "11:53"
+      time: "11:56"
     allow:
       - dependency-name: "demos/pixi-tutorial"
       - dependency-name: "demos/terminal-tutorial"
