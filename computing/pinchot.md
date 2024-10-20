@@ -41,6 +41,8 @@ You can launch Cubit via the ubuntu shortcuts in "Activities" or by using the co
 coreform_cubit
 ```
 
+When you're done using Cubit, please ensure you've closed Cubit (and all of it's sub-processes) before logging out of the fastx client. This stops processes from hanging and blocking other people from using Cubit due to the limited number of license seats.
+
 ## Getting Help
 
 If you need any assistance with this machine, send an email to: engrit-help@illinois.edu. For any help with the codes in `/shared/data`, please post in the group Slack channel.
