@@ -89,7 +89,7 @@ For journal articles, please include the DOI field. Any special characters in pe
 }
 ```
 
-### Technical Report
+#### Technical Report
 
 ```
 @techreport{PIRT,
@@ -115,16 +115,30 @@ For journal articles, please include the DOI field. Any special characters in pe
 ### Tips for Making Tables
 
 - When making tables, useful formatting is for any floating point numbers to have their decimal points "line up." This can help readers intuitively grasp magnitudes of numbers. To force numbers to line up in a table, you can use `\phantom{abc}`, which will put a blank space equal to the size that `abc` would normally take up in the text. For numbers, you can use `\phantom{000}` for however many zeros you need.
-- Do not mix scientific notation with non-scientific notation.
+- Do not mix scientific notation with non-scientific notation. For instance, a column in a table should NOT have `0.0001` in one row and `2e-5` in another row. Use scientific notation everywhere otherwise.
 - The `booktabs` package is useful for making pretty tables. It comes with the commands `\toprule`, `\midrule`, and `\bottomrule` to create horizontal lines in tables. These comamnds have extra spacing around them, so they look better than `\hline`.
 
 ### Miscellaneous Tips
 
 - To put a subscript on text (like to write UO2), you do not need to put the entire expression in math mode. Try `UO$_2$`.
+- Write math norms as `L$^2$`, not `L2`.
+- Prevent figures and tables from showing up in the middle of a sentence/paragraph by (i) making sure there is a blank line before and after the object, and also adding the `[htb!]` option.
+
+```
+
+\begin{figure}[htb!]
+\end{figure}
+
+```
+
+- You can force text to appear on the next page with `\clearpage`. This is useful for formatting.
 - Double quotes must be typed as two back-ticks! The double quote (") will not render the proper orientation.
+- Use Courier font or italics to refer to class names/function names/etc. in code. `{\tt Courier font}` or `{\it italics}`.
+- Footnotes can be written as `\footnote{your text}`, and this will automatically create the symbol and put the text in the footer of the page.
 
 ### Writing Tips
 
 - Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
 - Only capitalize names and proper titles
 - Do not capitalize elements on the periodic table (e.g., tritium not Tritium)
+- Be VERY careful about the difference between "validation" and "verification." Verification is anything where a comparison is made to another code, to an analytic solution, etc. ONLY validation refers to comparison against real-world, physical data like from an experiment. You are NOT validating code A if the results match code B.
