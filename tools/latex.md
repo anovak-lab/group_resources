@@ -4,6 +4,14 @@ Latex is an extremely useful tool for rendering text. This document mostly
 covers tips for using Latex, but is also where you can find general rules for
 scientific writing.
 
+Please use Overleaf for all writing. Share documents with `anovak@anl.gov` and
+all coauthors.
+
+When a reviewer leaves comments on overleaf, please hit "Resolve" if they are
+easy fixes which you have resolved. This will help de-clutter. For more nuanced
+discussions, like requests for more explanation, let the reviewer decide if
+their question has been adequately addressed.
+
 ### Units
 
 - Units should never be italicized, do not put them inside math mode.
