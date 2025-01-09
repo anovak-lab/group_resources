@@ -2,9 +2,12 @@
 
 Latex is an extremely useful tool for rendering text.
 
-### Some Useful Packages
+### SI units
 
 - `siunitx` for formatting of units; simply type the unit in long form spelling, and it will be rendered with the proper superscripts, e.g. `\si{\kilo\gram\per\second\per\meter}`
+
+### Subfigures
+
 - `subcaption` is useful for making subfigures, each with their own caption. It's a good idea for each subfigure to be the same height, which you can control with the size of the subfigure (i.e. instead of doing `width=0.3\linewidth`, you can also use heights like `width=3cm`). Below is an example for a subfigure with two images.
 
 ```
@@ -23,8 +26,6 @@ Latex is an extremely useful tool for rendering text.
     \label{fig:radial_comparison}
 \end{figure}
 ```
-
-
 
 ### Glossaries
 
@@ -48,19 +49,47 @@ To use, write `\gls{ardp}`, which will get expanded the first usage. For plural 
 
 ### Citations
 
-Citations are easy to include with a `.bib` file. This file should contain any entries you wish to cite. Some example formats are included below.
-You should list the author names with first/middle names abbreviated, and with " and " separating each author in the list. Any words which must have capital letters in the title should be enclosed in curly braces. To then include the references in your document, include the following in your document where you want the citations to be listed:
+Citations are easy to include with a `.bib` file. This file should contain any entries you wish to cite. Some example formats are included below. Tips when writing the `.bib` file:
+
+- If the same information is present in both conference papers and journal articles, it is preferable to cite the journal article. Oftentimes, only the attendees to a conference can easily obtain the conference papers, whereas journal articles also have undergone more rigorous peer review.
+- Always try to cite the "root" reference. For example, if you want to cite the BEAVRS benchmark specifications, you should not cite a paper which _models_ the BEAVRS benchmark. You should cite the actual specifications.
+- You should list the author names with first/middle names abbreviated
+- Use " and " to separate each author in the list, like
+
+```
+author = {A.J. Novak and A. Hegazy}
+```
+
+- Any words which must have capital letters in the title should be enclosed in curly braces, like
+
+```
+title = {The {OpenMC} Radiation Transport Code}
+```
+
+- To have "et al." show up rendered in your PDF, you need to type "and others", like
+
+```
+author = {A.J. Novak and others}
+```
+
+To then include the references in your document, include the following in your document where you want the citations to be listed:
 
 ```
 \bibliographystyle{unsrt}
 {\bibliography{biblio}}
 ```
 
-where your citation file would be named `biblio.bib`, for example. Miscellaneous tips:
+where your citation file would be named `biblio.bib`, for example. Some tips for then citing within your document:
 
 - When you write multiple citations together, be sure to just separate them via commas in a single `\cite` command, like `\cite{novak1,novak2}`.
-- If the same information is present in both conference papers and journal articles, it is preferable to cite the journal article. Oftentimes, only the attendees to a conference can easily obtain the conference papers, whereas journal articles also have undergone more rigorous peer review.
-- Always try to cite the "root" reference. For example, if you want to cite the BEAVRS benchmark specifications, you should not cite a paper which _models_ the BEAVRS benchmark. You should cite the actual specifications.
+- Try to put citations at the ends of sentences, unless it might be confusing exactly what the citation is referring to. For example, in the following sentence, one citation is given for Cardinal and one for MOOSE. But, by putting them both at the end of the sentence, it's not foolproof obvious that one citation is for Cardinal and the other for MOOSE -- how would the reader distinguish this from, say, two citations for MOOSE, or maybe two citations about physics? In this case, it's best to put the citations immediately after each code.
+
+```
+Cardinal and MOOSE are two applications for solving physics \cite{cardinal, moose}.
+
+# better
+Cardinal \cite{cardinal} and MOOSE \cite{moose} are two applications for solving physics.
+```
 
 #### Journal Article
 
@@ -135,10 +164,17 @@ For journal articles, please include the DOI field. Any special characters in pe
 - Double quotes must be typed as two back-ticks! The double quote (") will not render the proper orientation.
 - Use Courier font or italics to refer to class names/function names/etc. in code. `{\tt Courier font}` or `{\it italics}`.
 - Footnotes can be written as `\footnote{your text}`, and this will automatically create the symbol and put the text in the footer of the page.
+- If you are really tight on page limits, you can compress text around things like figures by adding `\vspace{-0.5em}`, to shrink white space by half a life (or, change the 0.5 to another number). To add white space, use a positive number like `\vspace{0.75em}`.
 
 ### Writing Tips
 
 - Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
 - Only capitalize names and proper titles
 - Do not capitalize elements on the periodic table (e.g., tritium not Tritium)
+- A common grammar mistake is improperly using plural vs. singular verbs. Consider the following sentence: "The demand for new space technologies have been growing." This is WRONG grammar -- the subject of the sentence is "The demand," but I often see students pick the plural vs. singular verb based on some intermediate word ("technologies"). To find out whether a verb should be singular or plural, try removing any intermediate words and putting the subject of the sentence adjacent to the verb you want to use, and see if it makes sense.
+
+```
+The demand ... have been growing --> clearly wrong
+```
+
 - Be VERY careful about the difference between "validation" and "verification." Verification is anything where a comparison is made to another code, to an analytic solution, etc. ONLY validation refers to comparison against real-world, physical data like from an experiment. You are NOT validating code A if the results match code B.
