@@ -1,6 +1,6 @@
 # Spring 2025 Semester
 
-- January 30:
+- January 30: Useful Latex commands/packages (April)
 - February 6:
 - February 13:
 - February 20:
