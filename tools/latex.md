@@ -83,6 +83,13 @@ plt.grid()
 \end{wrapfigure}
 ```
 
+- If you need to use a citation in a figure (or table) caption, make sure you define both the in-text caption and the table of contents caption:
+```
+\caption[Geometry for the first Kobayashi problem.]{Geometry for the first Kobayashi problem. Taken from Kobayashi and Sugimura \cite{kobayashi_benchmarks}.}
+```
+In this example, anything inside the `[]` will appear in the table of contents and everything in `{}` will appear in text. This prevents citations from going out of
+order due to their appearance in the table of contents.
+
 ### Glossaries
 
 The `glossaries` package allows you to auto-expand acronyms in text (full expansion for the first appearance, acroynm for all subsequent usages). This is especially helpful when working on collaborative projects where individual writers may not be aware of when the first time an acronym is being used, and needs to be spelled out. But also, it is
@@ -103,6 +110,14 @@ This will load glossary entries defined in a file named `glossary.tex`. In this 
 ```
 
 To use, write `\gls{ardp}`, which will get expanded the first usage. For plural acronyms, you can have Latex automatically add a trailing "s" using `\glspl{api}`. This will add an "s" to the acronym expansion, but not require you to have duplicate entries in your `glossary.tex` for the singular and plural forms of all the different acronyms.
+
+`glossaries` can also be used to create a table of acronyms, which is often required for longer technical articles (theses, dissertations, technical reports, etc.).
+This can be done with the following series of commands:
+```
+\printglossary[type=\acronymtype,nonumberlist]
+\addcontentsline{toc}{chapter}{Acronyms}
+\setheader{Acronyms}
+```
 
 ### Citations
 
