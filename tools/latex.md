@@ -12,6 +12,14 @@ easy fixes which you have resolved. This will help de-clutter. For more nuanced
 discussions, like requests for more explanation, let the reviewer decide if
 their question has been adequately addressed.
 
+### Abstracts
+
+Abstracts should convey three things:
+
+- Why the work was performed/overall motivation for the paper
+- Summary of what analysis is given in the paper
+- Summary of the findings (1-2 sentences about the punchline)
+
 ### Units
 
 - Units should never be italicized, do not put them inside math mode.
@@ -98,11 +106,16 @@ annoying to have to remember to spell out acronyms! To use, include the followin
 This will load glossary entries defined in a file named `glossary.tex`. In this file, you will in general have lines like
 
 ```
-\newacronym[plural=APIs]{api}{API}{Application Programming Interface}
+# regular acronym
 \newacronym{ardp}{ARDP}{Advanced Reactor Demonstration Program}
+
+# acronym you may want to sometimes use in plural form
+\newacronym[plural=APIs]{api}{API}{Application Programming Interface}
 ```
 
-To use, write `\gls{ardp}`, which will get expanded the first usage. For plural acronyms, you can have Latex automatically add a trailing "s" using `\glspl{api}`. This will add an "s" to the acronym expansion, but not require you to have duplicate entries in your `glossary.tex` for the singular and plural forms of all the different acronyms.
+- To use, write `\gls{ardp}`, which will get expanded the first usage.
+- For plural acronyms, you can have Latex automatically add a trailing "s" using `\glspl{api}`. This will add an "s" to the acronym expansion, but not require you to have duplicate entries in your `glossary.tex` for the singular and plural forms of all the different acronyms. To use plurals, you will need to have the `plural` key when defining the acronym, as shown above.
+- When you write an abstract, I recommend avoiding to use the `\gls{}` package in the abstract. Spell out the acronyms in full, then use `\gls{}` for all remaining parts. Anyone who skips reading the abstract will therefore still see acronyms expanded fully in the main body of the text.
 
 ### Citations
 
@@ -111,6 +124,14 @@ Citations are easy to include with a `.bib` file. This file should contain any e
 - If the same information is present in both conference papers and journal articles, it is preferable to cite the journal article. Oftentimes, only the attendees to a conference can easily obtain the conference papers, whereas journal articles also have undergone more rigorous peer review.
 - Always try to cite the "root" reference. For example, if you want to cite the BEAVRS benchmark specifications, you should not cite a paper which _models_ the BEAVRS benchmark. You should cite the actual specifications.
 - You should list the author names with first/middle names abbreviated
+- Delete the `url` key in bibfiles, otherwise it will be rendered in the citation list and take up a lot of unecessary space.
+- For conferences, abbreviate the names, like the following.
+
+```
+booktitle  = {{Proceedings of Physor}}
+booktitle  = {{Proceedings of M\&C}}
+```
+
 - Use " and " to separate each author in the list, like
 
 ```
@@ -198,7 +219,7 @@ For journal articles, please include the DOI field. Any special characters in pe
 }
 ```
 
-### Tips for Making Tables
+### Tables
 
 - The `booktabs` package is useful for making pretty tables. It comes with the commands `\toprule`, `\midrule`, and `\bottomrule` to create horizontal lines in tables. These comamnds have extra spacing around them, so they look better than `\hline`.
 
@@ -248,6 +269,15 @@ b & $4\times10^{+1}$\\
 
 - To put a subscript on text (like to write UO2), you do not need to put the entire expression in math mode. Try `UO$_2$`.
 - Write math norms as `L$^2$`, not `L2`.
+- Use `\equiv` instead of `=` when writing a definition.
+- When writing a math fraction inline with text, it can awkwardly increase the spacing before and after the line. Try
+
+```
+\usepackage{nicefrac}
+
+\nicefrac{a}{b}
+```
+
 - Prevent figures and tables from showing up in the middle of a sentence/paragraph by (i) making sure there is a blank line before and after the object, and also adding the `[htb!]` option.
 
 ```
@@ -257,7 +287,7 @@ b & $4\times10^{+1}$\\
 
 ```
 
-- You can force text to appear on the next page with `\clearpage`. This is useful for formatting.
+- You can force text to appear on the next page with `\clearpage`.
 - Double quotes must be typed as two back-ticks! The double quote (") will not render the proper orientation.
 - Use Courier font or italics to refer to class names/function names/etc. in code. `{\tt Courier font}` or `{\it italics}`.
 - Footnotes can be written as `\footnote{your text}`, and this will automatically create the symbol and put the text in the footer of the page.
@@ -266,6 +296,14 @@ b & $4\times10^{+1}$\\
 ### Writing/Grammar Tips
 
 - Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
+- Use the Oxford comma, it is clearer.
+
+```
+I leave my estate to my business partners, Tom and Mary.
+
+I leave my estate to my business partners, Tom, and Mary.
+```
+
 - Only capitalize names and proper titles
 - Do not capitalize elements on the periodic table (e.g., use tritium not Tritium)
 - A common grammar mistake is improperly using plural vs. singular verbs. Consider the following sentence: "The demand for new space technologies have been growing." This is WRONG grammar -- the subject of the sentence is "The demand," but I often see students pick the plural vs. singular verb based on some intermediate word ("technologies"). To find out whether a verb should be singular or plural, try removing any intermediate words and putting the subject of the sentence adjacent to the verb you want to use, and see if it makes sense.
@@ -294,6 +332,6 @@ The U.S. is home to Oak Ridge; Argonne, founded first; and Idaho National Labora
 
 Otherwise, it would not be 100% clear if the neutron spectrum plot was measured experimentally.
 
-- When plotting tallies from OpenMC, it's a good idea to [normalize them]().
+- When plotting tallies from OpenMC, it's a good idea to [normalize them](https://docs.openmc.org/en/stable/usersguide/tallies.html#normalization-of-tally-results). If you are not going to normalize them like this, then at least normalize the plot so that the data ranges from 0 to 1.
 
 - Be VERY careful about the difference between "validation" and "verification." Verification is anything where a comparison is made to another code, to an analytic solution, etc. ONLY validation refers to comparison against real-world, physical data like from an experiment. You are NOT validating code A if the results match code B.
