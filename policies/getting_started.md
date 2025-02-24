@@ -16,5 +16,10 @@
 
 * Ask Professor Novak to create a Google Doc for tracking research updates/meeting notes.
 
-* 
+* Talk with Barb Russell and/or Sarah Drum in Suite 100 Talbot about getting a key to 225D Talbot (the student office)
 
+* Go get an iCard, then email Barb about getting added to the list of people who can access Talbot after-hours.
+
+* If you are an international student, open a bank account. You will need this for direct deposit.
+
+* Download the UIUC [VPN client](https://help.uillinois.edu/TDClient/42/UIUC/Requests/ServiceDet?ID=167). You will need to be signed in to the VPN if you want to access Pinchot from off-campus. Otherwise, you can access Pinchot just by being on the UIUC wifi ("Illinois Net").
