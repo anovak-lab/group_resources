@@ -4,9 +4,9 @@ Cardinal is the main software project that our group develops and maintains. It 
 
 ## Resources and Tips for Building
 
-Before you attempt to build Cardinal on a given HPC system, check to see if there are instructions on the [Cardinal website](https://cardinal.cels.anl.gov/hpc.html). Even if this is a new HPC system without instructions, the existing list can give you can idea of what packages (known as "modules") you'll need to hunt for.
+Before you attempt to build Cardinal on a given HPC system, check to see if there are instructions on the [Cardinal website](https://cardinal.cels.anl.gov/hpc.html). Even if this is a new HPC system without instructions the existing list can give you can idea of what packages (known as "modules") you'll need to hunt for.
 
-Almost all HPC systems use [Lmod](https://lmod.readthedocs.io/en/latest/), which is a Lua-based environment management system. You'll use Lmod to load the modules you need to build Cardinal. Some helpful commands include:
+Almost all HPC systems use [Lmod](https://lmod.readthedocs.io/en/latest/), which is a Lua-based environment management system. You'll use Lmod to load the modules you need to build Cardinal - some helpful commands include:
 
 - `module list MOD_NAME`, shows you any modules currently loaded which include `MOD_NAME`. If you don't specify a module name it shows all currently loaded modules.
 - `module spider MOD_NAME`, shows you all available modules which include `MOD_NAME`. If you don't specify a module name it will show you all available modules on the HPC (not recommended!).
@@ -57,13 +57,13 @@ export LIBMESH_JOBS=8
 export MOOSE_JOBS=8
 ```
 
-The best place to put these exports is your `.bashrc` to avoid the need to export these environment variables every time you spin up a new shell. Once these variables have been exported and you've loaded a set of modules that you believe will compile Cardinal, you can run MOOSE diagnostics to make sure you haven't missed anything:
+The best place to put these exports is your `.bashrc` to avoid needing to export these environment variables every time you spin up a new shell. Once these variables have been exported and you've loaded a set of modules that you believe will compile Cardinal, you can run MOOSE diagnostics to make sure you haven't missed anything:
 ```bash
 ./contrib/moose/scripts/diagnostics.sh
 ```
-If critical errors are reported at this stage, it is likely because your current module set does not meet MOOSE's requirements. If you receive an error stating that `jinja2` is missing, you can safety move on.
+If critical errors are reported at this stage, it is likely because your current module set does not meet MOOSE's requirements. If you receive an error stating that `jinja2` is missing, you can safely move on.
 
-**Note:** If you want to build NekRS with GPU support, you need GPU-enabled compilers (CUDA compilers, OpenCL, etc.) on the login node. Some HPC systems only allow users to load those modules on nodes which contain GPUs. If that is the case for you, you'll need to build with a job script (see the next session). To enable a GPU build, set one of the following environment variables in Cardinal's makefile to `1` (depending on the specific GPUs on your system): `OCCA_CUDA_ENABLED`, `OCCA_HIP_ENABLED`, or `OCCA_OPENCL_ENABLED`. You'll also need to make sure you load modules with GPU compilers.
+**Note:** If you want to build NekRS with GPU support, you need GPU-enabled compilers (CUDA compilers, OpenCL compilers, etc.) on the login node. Some HPC systems only allow users to load those modules on nodes which contain GPUs. If that is the case for you, you'll need to build with a job script (see the next session). To enable a GPU build, set one of the following environment variables in Cardinal's makefile to `1` (depending on the specific GPUs on your system): `OCCA_CUDA_ENABLED`, `OCCA_HIP_ENABLED`, or `OCCA_OPENCL_ENABLED`. You'll also need to make sure you load modules with GPU compilers.
 
 From here, you can run the commands below to build MOOSE's submodules. We recommend building with `nohup` or `screen` to avoid getting timed out.
 
