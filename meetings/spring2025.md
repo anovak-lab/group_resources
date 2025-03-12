@@ -8,9 +8,9 @@
 - March 6: Dimitri, Nathan undergrad research talk
 - March 13: Mohamed OpenMC workshop practice
 - March 20: CANCELLED (spring break)
-- March 27: CANCELLED (April in DC)
+- March 27: CANCELLED (April in Las Vegas)
 - April 3: Kevin (M&C practice), ANS summer conference presentation
-- April 10: CANCELLED (April in Saudi Arabia)
+- April 10: Joe (M&C practice)
 - April 17: Aya, Joe (M&C practice)
 - April 24: Mahmoud, Michael (M&C practice)
 - May 1: CANCELLED (M&C Conference)
