@@ -11,7 +11,7 @@
 - March 27: CANCELLED (April in Las Vegas)
 - April 3: Kevin (M&C practice)
 - April 10: Joe (M&C practice)
-- April 17: Aya (M&C practice)
+- April 17: Aya (M&C practice), Travis (M&C practice, if time)
 - April 24: Mahmoud, Michael (M&C practice)
 - May 1: CANCELLED (M&C Conference)
 
