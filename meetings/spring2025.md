@@ -9,9 +9,9 @@
 - March 13: Mohamed OpenMC workshop practice
 - March 20: CANCELLED (spring break)
 - March 27: CANCELLED (April in Las Vegas)
-- April 3: Kevin (M&C practice), ANS summer conference presentation
+- April 3: Kevin (M&C practice)
 - April 10: Joe (M&C practice)
-- April 17: Aya, Joe (M&C practice)
+- April 17: Aya (M&C practice)
 - April 24: Mahmoud, Michael (M&C practice)
 - May 1: CANCELLED (M&C Conference)
 
