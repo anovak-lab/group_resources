@@ -14,12 +14,45 @@ This class presents historical approaches to fission reactor kinetics and dynami
 
 This class introduces varies numerical methods for solving both hyperbolic and elliptic Partial Differential Equations (PDEs). The first month is spent on finite difference methods to introduce the class to various numerical principles (stability, consistency, convergence, dispersion, dissipation, etc.), which is followed by a few weeks on finite volume methods (for hyperbolic problems), and a few weeks on finite element methods (for elliptic problems). The remainder of the course functions as a special topics class in numerical methods and depends on the interests of the students / whims of the professor. The course strikes a nice balance in introducing the theoretical underpinnings of numerical methods for PDEs while also providing opportunities to implement the methods on the four homeworks / on the final project. The class assumes a background which includes senior undergraduate numerics classes, and so some of the lectures may be difficult to follow if the student doesn't have said background. Overall, the course is worth taking if you want to gain a better understanding of the theoretical underpinnings of PDE numerics without taking a pure math class.
 
+## TAM
+
+### TAM 570: Spectral Methods for CFD
+
+Spectral methods are one of the most efficient approaches to simulation of turbulent flows. In this course we learnt how and why these methods work. We wrote our own 3D spectral and multidomain spectral flow solvers in matlab. We covered the numerical analysis, iterative solvers, high-order semi-implicit timesteppers, fast matrix-free operator evaluation and inversion. We explored model problems from numerical analysis of PDEs to stability, transition, and turbulence in incompressible flows. The course had about 10 assignments and two projects. The two projects can be done using Nek5000/NekRS.
+
+## ME
+
+### ME412: Numerical Thermo-Fluid Mechs
+
+We covered the following topics:
+1. Introduction of numerical solutions
+2. error, stability, and convergence
+3. One-dimensional steady heat conduction
+4. One-dimensional unsteady heat conduction
+5. Steady 2D heat conduction; iterative and direct methods
+6. 2D unsteady heat conduction
+7. Heat conduction in complex geometries
+8. Fully-developed flow in complex ducts
+9. 1D and 2D linear convection equation
+10. Nonlinear convection equation
+11. Derivation of Navier-Stokes equations
+12. 2D unsteady fluid flows
+13. 2D steady flows
+14. 3D Duct flows
+The course had an assignment every week, four coding projects, four fluent projects, and one final project that is mostly literature review.
+
+
 # Non-Useful UIUC Classes
 
 This page lists some classes our group has not found as useful for our field of study.
+
+
 
 ## NPRE 
 
 ### Probabilistic Risk Assessment (NPRE 461)
 
 Theories and techniques of risk, safety, and reliability of complex systems and Probabilistic Risk Assessment (PRA), which provides input for risk-informed decision-making for design, operation, and regulatory oversight. Topics include: Systematic Risk Scenario Modeling, Consequence Analysis, Bayesian Updating, Bayesian Belief Network, Binary Decision Diagram, Uncertainty Propagation, Hardware Reliability, Human Error Modeling, Failure Causal Modeling, Maintenance and Repair Modeling, Risk Importance Ranking, and Data Analytics. The course material sacrifices breadth for depth, the software discussed is outdated, and the amount (not the difficulty) of the assignments is excessive. This is very much a busywork class. NPRE 461 one of the rare classes with an online section, which is valuable for some learners, but this should not be the first choice for in-person students in the M&M lab.
+
+
+
