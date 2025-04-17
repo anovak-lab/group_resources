@@ -1,6 +1,4 @@
-# Useful UIUC Classes
-
-This page lists some classes our group has found useful.
+This page lists some classes our group has taken - some very useful and relevant to the group, but we include our reviews of additional classes as well to help future students.
 
 ## NPRE
 
