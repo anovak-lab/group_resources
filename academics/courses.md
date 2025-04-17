@@ -12,6 +12,10 @@ This course provides an introduction to neutron transport theory, covering both 
 
 This class presents historical approaches to fission reactor kinetics and dynamics, where the lectures and homeworks follow Introductory Nuclear Reactor Dynamics (Ott and Neuhold) and Dynamics of Nuclear Reactors (Hetrick) to the letter. Most of the methods discussed in the course have been antiquated by advances in computing over the last 30-40 years, however the intuition provided by these discussions may prove valuable to someone who is unfamiliar with the time behavior of fission reactors. The computer projects are the most useful components of the class to all students as they can be taylored to one's individual research interests. They consist of implementing various methods for point reactor kinetics (CP1), point reactor dynamics with feedback (CP2), and a kinetics/dynamics project of the student's choice (CP3).
 
+### Probabilistic Risk Assessment (NPRE 461)
+
+Theories and techniques of risk, safety, and reliability of complex systems and Probabilistic Risk Assessment (PRA), which provides input for risk-informed decision-making for design, operation, and regulatory oversight. Topics include: Systematic Risk Scenario Modeling, Consequence Analysis, Bayesian Updating, Bayesian Belief Network, Binary Decision Diagram, Uncertainty Propagation, Hardware Reliability, Human Error Modeling, Failure Causal Modeling, Maintenance and Repair Modeling, Risk Importance Ranking, and Data Analytics. The course material sacrifices depth for breadth, the software discussed is outdated, and the amount (not the difficulty) of the assignments is excessive. This is very much a busywork class. NPRE 461 one of the rare classes with an online section, which is valuable for some learners, but this should not be the first choice for in-person students in the M&M lab.
+
 ## CS
 
 ### Numerical Methods for Partial Differential Equations  (CS 555 / CSE 510 / MATH 552)
@@ -24,6 +28,13 @@ This class introduces varies numerical methods for solving both hyperbolic and e
 ### TAM 570: Spectral Methods for CFD
 
 Spectral methods are one of the most efficient approaches to simulation of turbulent flows. In this course we learnt how and why these methods work. We wrote our own 3D spectral and multidomain spectral flow solvers in matlab. We covered the numerical analysis, iterative solvers, high-order semi-implicit timesteppers, fast matrix-free operator evaluation and inversion. We explored model problems from numerical analysis of PDEs to stability, transition, and turbulence in incompressible flows. The course had about 10 assignments and two projects. The two projects can be done using Nek5000/NekRS.
+
+## ECE
+
+### Applied Parallel programming (ECE 408/CS 483/CSE 408)
+
+The aim of this course is to provide knowledge and hands-on experience in developing software for GPUs. The course workload is highly demanding. It includes two exams that together make up 50% of the grade, and they are quite difficult. There are eight programming lab assignments of steadily increasing complexity. All assignments involve programming a GPU system using CUDA. Tasks include matrix multiplication, convolution, reduction, histogram calculation, and sparse matrix-vector multiplication. Each assignment is divided into a coding part and a quiz part. The assignments account for 25% of the final grade and are of moderate difficulty. During the second half of the semester, students work on a larger, more complex AI project. The course does not cover MPI or OpenMP, so it is only useful for students interested specifically in GPU programming and AI.
+
 
 ## ME
 
@@ -44,7 +55,7 @@ We covered the following topics:
 12. 2D unsteady fluid flows
 13. 2D steady flows
 14. 3D Duct flows
-15. 
+
 The course had an assignment every week, four coding projects, four fluent projects, and one final project that is mostly literature review.
 
 
@@ -54,22 +65,9 @@ The course had an assignment every week, four coding projects, four fluent proje
 
 This class focuses on solving fluid flow problems numerically while developing skills in programming and data visualization. No prior background in atmospheric sciences is required. Topics of stability, error types, and their quantification are studied. Students will learn and apply finite difference and finite volume methods by implementing them in code for various homework assignments. The course takes a gradual approach, beginning with a simple 1D advection problem and progressively advancing to 2D and 3D cases, including the use of both regular and nested grids, with students writing the code for grid nesting as well. A key goal of the course is to help students design their code for efficient execution on parallel computers. Prof. Jewett is a great teacher and runs the class very well. The amount of time you will spend on assignments will vary based on how proficient you are with programming. However, the professor is willing to help and debug your code with you, which is super helpful. You may want to check the computer programs you'll be solving in this class on http://rfd.atmos.uiuc.edu/502/
 
-# Non-Useful UIUC Classes
-
-This page lists some classes our group has not found as useful for our field of study.
 
 
 
-## NPRE 
-
-### Probabilistic Risk Assessment (NPRE 461)
 
 
-Theories and techniques of risk, safety, and reliability of complex systems and Probabilistic Risk Assessment (PRA), which provides input for risk-informed decision-making for design, operation, and regulatory oversight. Topics include: Systematic Risk Scenario Modeling, Consequence Analysis, Bayesian Updating, Bayesian Belief Network, Binary Decision Diagram, Uncertainty Propagation, Hardware Reliability, Human Error Modeling, Failure Causal Modeling, Maintenance and Repair Modeling, Risk Importance Ranking, and Data Analytics. The course material sacrifices depth for breadth, the software discussed is outdated, and the amount (not the difficulty) of the assignments is excessive. This is very much a busywork class. NPRE 461 one of the rare classes with an online section, which is valuable for some learners, but this should not be the first choice for in-person students in the M&M lab.
-
-## ECE
-
-### Applied Parallel programming (ECE 408/CS 483/CSE 408)
-
-The aim of this course is to provide knowledge and hands-on experience in developing software for GPUs. The course workload is highly demanding. It includes two exams that together make up 50% of the grade, and they are quite difficult. There are eight programming lab assignments of steadily increasing complexity. All assignments involve programming a GPU system using CUDA. Tasks include matrix multiplication, convolution, reduction, histogram calculation, and sparse matrix-vector multiplication. Each assignment is divided into a coding part and a quiz part. The assignments account for 25% of the final grade and are of moderate difficulty. During the second half of the semester, students work on a larger, more complex AI project. The course does not cover MPI or OpenMP, so it is only useful for students interested specifically in GPU programming and AI.
 
