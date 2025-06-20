@@ -43,6 +43,7 @@ With `siunitx`, the `\per` units will appear with superscripts like `$^{-1}$`. I
 
 ### Figures
 
+- For general tips on creating images, read the [Paraview tutorial](https://github.com/anovak-lab/group_resources/blob/master/communication/paraview.pptx).
 - Always use grid lines on your plots, it helps to read the data. If using something like `matplotlib`, this is done like
 
 ```
@@ -51,6 +52,8 @@ import matplotlib.pyplot as plt
 plt.plot(x, y)
 plt.grid()
 ```
+
+- If you have two images side-by-side which are showing the same field (e.g., two differnet plots of temperature for different thermal simulations), always put them on the same color scale.
 
 - `subcaption` is useful for making subfigures, each with their own caption. It's a good idea for each subfigure to be the same height, which you can control with the size of the subfigure (i.e. instead of doing `width=0.3\linewidth`, you can also use heights like `width=3cm`). Below is an example for a subfigure with two images.
 
@@ -309,6 +312,12 @@ b & $4\times10^{+1}$\\
 - If you are really tight on page limits, you can compress text around things like figures by adding `\vspace{-0.5em}`, to shrink white space by half a life (or, change the 0.5 to another number). To add white space, use a positive number like `\vspace{0.75em}`.
 
 ### Writing/Grammar Tips
+
+- Take care in how you order your text. You want to start from the most introductory, high-level, general text and then proceed to more specific examples/discussion. For instance, consider the following paragraph. Put yourself in the shoes of a novice - someone who has no idea what "packing fraction" represents would be wishing for a definition while they're introduced to how OpenMC's algorithms work -- only to later encounter that very definition they were craving earlier! If you need to introduce/define something, do it BEFORE the more specific discussions.
+
+```
+OpenMC uses random sequential addition (RSA) to control the packing fraction of TRISO particles. This algorithm can be accelerated using close random packing (CRP) techniques. The packing fraction represents the volume occupied by TRISO particles.
+```
 
 - Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
 - Use the Oxford comma, it is clearer.
