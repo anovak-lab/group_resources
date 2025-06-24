@@ -1,5 +1,19 @@
 This page lists some classes our group has taken - some very useful and relevant to the group, but we include our reviews of additional classes as well to help future students.
 
+## General Notes
+
+Students must be enrolled for at least 12 hours per semester, even after you have finished all of your technical course requirements. Typically students take 2 technical classes per semester, the NPRE 596 seminar class, and then "make up the difference"
+to get to 12 credits by enrolling in NPRE 599 Thesis Research. To enroll
+in NPRE 599, you will need to specifically enroll in April Novak's section.
+
+- In the course registration portal, enter CRN 24174 (for Professor Novak). This will initially add 0 hours.
+- Under the "Schedule and Options" tab, you can then edit to go from 0 hours to however many are needed so that your entire schedule is at 12. See the screenshot of the interface below.
+
+<p align="center">
+  <img src="../photos/crn.png" width="500">
+</p>
+
+
 ## NPRE
 
 ### Reactor Theory I (NPRE 555)
