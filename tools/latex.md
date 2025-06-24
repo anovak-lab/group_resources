@@ -320,6 +320,17 @@ OpenMC uses random sequential addition (RSA) to control the packing fraction of 
 ```
 
 - Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
+- When listing an equation, always define the symbols in the equation immediately afterwards, within the text. You don't need to define the symbols which are "obvious." For example, in the below, you don't need to be pedantic and define what $\nabla$ is - that one should be obvious.
+
+```
+\begin{equation}
+\rho C_p \frac{dT}{dt}-\nabla\cdot k\nabla T=\dot{q}
+\end{equation}
+
+where $\rho$ is the density, $C_p$ is the volumetric specific heat, $T$ is temperature, $k$ is thermal conductivity, and $\dot{q}$ is the volumetric heat source.
+```
+
+
 - Use the Oxford comma, it is clearer.
 
 ```
