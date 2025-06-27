@@ -10,7 +10,7 @@ in NPRE 599, you will need to specifically enroll in April Novak's section.
 - Under the "Schedule and Options" tab, you can then edit to go from 0 hours to however many are needed so that your entire schedule is at 12. See the screenshot of the interface below.
 
 <p align="center">
-  <img src="../photos/crn.png" width="500">
+  <img src="../photos/crn.png" width="700">
 </p>
 
 
