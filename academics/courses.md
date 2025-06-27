@@ -50,6 +50,17 @@ The aim of this course is to provide knowledge and hands-on experience in develo
 
 ## ME
 
+### ME471: Finite Element Analysis
+
+The course introduces and covers finite element method, it is offered every semester. The class focused on the following engineering problems: truss and frame structures, heat conduction, and linear elasticity. There are homeworks, coding projects, software projects (ABAQUS), midterm and final exams. In my opinion, it is an easy class and a good class to introduce finite element method.
+The covered topics are:
+1. Introduction and review matrix methods
+2. Fundamentals of finite elements
+3. Application to solid mechanics: truss elements, beam elements, plate and shell elements, constant strain triangle, vibration problems
+4. Programming commercial packages (e.g., ABAQUS)
+5. Application to heat transfer: one-dimensional, two-dimensional, transient problems, thermal stress
+6. Advanced topics: numerical integration methods, isoparametric elements, fluid mechanics and nonlinear problems
+
 ### ME412: Numerical Thermo-Fluid Mechs
 
 We covered the following topics:
