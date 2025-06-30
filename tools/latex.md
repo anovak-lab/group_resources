@@ -41,6 +41,18 @@ With `siunitx`, the `\per` units will appear with superscripts like `$^{-1}$`. I
 \si{\micro\gram}/\si{\gram}
 ```
 
+### Referencing Other Parts of the Paper
+
+- When referencing other parts of the paper, always use labels so that changes to paper ordering are automatically reflected. Use `sec` for sections, `table` for tables, `fig` for figures, etc.
+
+```
+
+In Section \ref{sec:conclusions}, we discuss XYZ.
+
+\section{Conclusions}
+\label{sec:conclusions}
+```
+
 ### Figures
 
 - For general tips on creating images, read the [Paraview tutorial](https://github.com/anovak-lab/group_resources/blob/master/communication/paraview.pptx).
@@ -141,6 +153,7 @@ Citations are easy to include with a `.bib` file. This file should contain any e
 
 - If the same information is present in both conference papers and journal articles, it is preferable to cite the journal article. Oftentimes, only the attendees to a conference can easily obtain the conference papers, whereas journal articles also have undergone more rigorous peer review.
 - Always try to cite the "root" reference. For example, if you want to cite the BEAVRS benchmark specifications, you should not cite a paper which _models_ the BEAVRS benchmark. You should cite the actual specifications.
+- Try to avoid citing websites unless the information does not exist anywhere else. A good example is how to cite a piece of software - in general, try to cite a code "overview paper" which describes the software at a high level. If that does not exist, some repositories have a DOI listed on github.
 - You should list the author names with first/middle names abbreviated
 - Delete the `url` key in bibfiles, otherwise it will be rendered in the citation list and take up a lot of unecessary space.
 - For conferences, abbreviate the names, like the following.
@@ -311,6 +324,21 @@ b & $4\times10^{+1}$\\
 - Footnotes can be written as `\footnote{your text}`, and this will automatically create the symbol and put the text in the footer of the page.
 - If you are really tight on page limits, you can compress text around things like figures by adding `\vspace{-0.5em}`, to shrink white space by half a life (or, change the 0.5 to another number). To add white space, use a positive number like `\vspace{0.75em}`.
 
+### Anatomy of a Paper
+
+- Abstracts should introduce the high-level purpose and findings of the paper. You should have 1-2 sentences which give the numeric punchline - *how* much more accurate was method X, etc.
+- Introductions and Motivation: Motivate the purpose of the paper. For a journal article, you should provide a literature review to help the reader understand where your work fits into the larger community of work. You should be citing at least 10 other papers related to yours and explaining how they are relevant. For example, read Section I of [this paper](https://www.sciencedirect.com/science/article/pii/S0029549325002213). This paper starts with a physics motivation for why someone should care about this particular flow phenomenon - what reactors and what conditions is interassembly flow relevant? Then, the paper gives a summary of how people have attempted to model this phenomon.
+
+    Finally, the introduction should end with a section providing a summary of what the paper will discuss. The last 2-3 sentences should be an outline of the rest of the paper.
+
+```
+In Section II, we introduce the computational tools used in this work. Section III presents the mesh refinement study, and Section IV shows comparisons against experimental data. Finally, Section V presents conclusions and areas of future work.
+```
+
+The rest of the paper sections depends on exactly the content of the paper. But you should present background information first before results.
+
+- Conclusions: summarize the main findings of the paper; address any simplifications or areas of future work.
+
 ### Writing/Grammar Tips
 
 - Take care in how you order your text. You want to start from the most introductory, high-level, general text and then proceed to more specific examples/discussion. For instance, consider the following paragraph. Put yourself in the shoes of a novice - someone who has no idea what "packing fraction" represents would be wishing for a definition while they're introduced to how OpenMC's algorithms work -- only to later encounter that very definition they were craving earlier! If you need to introduce/define something, do it BEFORE the more specific discussions.
@@ -319,7 +347,12 @@ b & $4\times10^{+1}$\\
 OpenMC uses random sequential addition (RSA) to control the packing fraction of TRISO particles. This algorithm can be accelerated using close random packing (CRP) techniques. The packing fraction represents the volume occupied by TRISO particles.
 ```
 
-- Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is.
+- Do not begin sentences with "It" or "This," as it can easily be unclear what the subject of the sentence is. Also avoid using "it" as much as possible, even in the middle of a sentence. For example, in the sentence below, the reader does not know if MOOSE is the preferred simulation approach, or the finite element analysis method.
+
+```
+MOOSE is a software package for finite element analysis. It is the preferred approach for simulation.
+```
+
 - When listing an equation, always define the symbols in the equation immediately afterwards, within the text. You don't need to define the symbols which are "obvious." For example, in the below, you don't need to be pedantic and define what $\nabla$ is - that one should be obvious.
 
 ```
@@ -331,7 +364,7 @@ where $\rho$ is the density, $C_p$ is the volumetric specific heat, $T$ is tempe
 ```
 
 
-- Use the Oxford comma, it is clearer.
+- Use the Oxford comma, it is clearer. For example, in the following sentence, without the Oxford comma it isn't clear if Tom and Mary are business partners or not.
 
 ```
 I leave my estate to my business partners, Tom and Mary.
@@ -339,6 +372,7 @@ I leave my estate to my business partners, Tom and Mary.
 I leave my estate to my business partners, Tom, and Mary.
 ```
 
+- When putting dashes in sentences, use the double dash (em-dash): `--`. Use the single dash, `-`, only for hyphenation.
 - Only capitalize names and proper titles
 - Do not capitalize elements on the periodic table (e.g., use tritium not Tritium)
 - A common grammar mistake is improperly using plural vs. singular verbs. Consider the following sentence: "The demand for new space technologies have been growing." This is WRONG grammar -- the subject of the sentence is "The demand," but I often see students pick the plural vs. singular verb based on some intermediate word ("technologies"). To find out whether a verb should be singular or plural, try removing any intermediate words and putting the subject of the sentence adjacent to the verb you want to use, and see if it makes sense.

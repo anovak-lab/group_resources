@@ -15,7 +15,7 @@ Once you are logged in, you will be in your home directory. Prof. Novak compiles
 
 ## Cubit
 
-Prof. Novak's group has a Cubit license, which can be accessed from Pinchot. In order to get a "screen" in order to interact with the Cubit GUI, first download the [fastx client](https://www.starnet.com/download/fastx-client) for whatever desktop operating system you have. As a reference, [this article](https://answers.illinois.edu/page.php?id=81727), in the "Connect with the desktop client" section, shows the buttons and steps needed to complete the remaining instructions.
+Prof. Novak's group has a Cubit license, which can be accessed from Pinchot. In order to get a "screen" in order to interact with the Cubit GUI, first download the [fastx client](https://www.starnet.com/download/fastx-client) for whatever desktop operating system you have. As a reference, [this article](https://answers.illinois.edu/page.php?id=81727), in the "Connect with the desktop client" section, shows the buttons and steps needed to complete the remaining instructions. You'll use `pinchot.npre.illinois.edu` as the `Host` in the GUI.
 
 Once installed, add a new a connection by clicking the 'plus' sign and using `pinchot.npre.illinois.edu` as the Host and `22` as the Port. Then, launch a session using "Default Desktop." Once it is launched, you can use it like a regular GUI system. The hostname and port number you should use when opening Cubit for the first time are:
 
