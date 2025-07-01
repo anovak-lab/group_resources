@@ -12,14 +12,6 @@ easy fixes which you have resolved. This will help de-clutter. For more nuanced
 discussions, like requests for more explanation, let the reviewer decide if
 their question has been adequately addressed.
 
-### Abstracts
-
-Abstracts should convey three things:
-
-- Why the work was performed/overall motivation for the paper
-- Summary of what analysis is given in the paper
-- Summary of the findings (1-2 sentences about the punchline)
-
 ### Units
 
 - Units should never be italicized, do not put them inside math mode.
@@ -327,6 +319,9 @@ b & $4\times10^{+1}$\\
 ### Anatomy of a Paper
 
 - Abstracts should introduce the high-level purpose and findings of the paper. You should have 1-2 sentences which give the numeric punchline - *how* much more accurate was method X, etc.
+  - Why the work was performed/overall motivation for the paper
+  - Summary of what analysis is given in the paper
+  - Summary of the findings (1-2 sentences about the punchline)
 - Introductions and Motivation: Motivate the purpose of the paper. For a journal article, you should provide a literature review to help the reader understand where your work fits into the larger community of work. You should be citing at least 10 other papers related to yours and explaining how they are relevant. For example, read Section I of [this paper](https://www.sciencedirect.com/science/article/pii/S0029549325002213). This paper starts with a physics motivation for why someone should care about this particular flow phenomenon - what reactors and what conditions is interassembly flow relevant? Then, the paper gives a summary of how people have attempted to model this phenomon.
 
     Finally, the introduction should end with a section providing a summary of what the paper will discuss. The last 2-3 sentences should be an outline of the rest of the paper.
@@ -374,6 +369,7 @@ I leave my estate to my business partners, Tom, and Mary.
 
 - When putting dashes in sentences, use the double dash (em-dash): `--`. Use the single dash, `-`, only for hyphenation.
 - Only capitalize names and proper titles
+- When writing numbers, don't use commas (e.g., write `1000` and not `1,000`). For any large numbers, use scientific notation if the precise value of the number isn't necessary (such as for number of elements in a mesh, which are typically only given for a rough sense of refinement).
 - Do not capitalize elements on the periodic table (e.g., use tritium not Tritium)
 - A common grammar mistake is improperly using plural vs. singular verbs. Consider the following sentence: "The demand for new space technologies have been growing." This is WRONG grammar -- the subject of the sentence is "The demand," but I often see students pick the plural vs. singular verb based on some intermediate word ("technologies"). To find out whether a verb should be singular or plural, try removing any intermediate words and putting the subject of the sentence adjacent to the verb you want to use, and see if it makes sense.
 
@@ -404,3 +400,6 @@ Otherwise, it would not be 100% clear if the neutron spectrum plot was measured 
 - When plotting tallies from OpenMC, it's a good idea to [normalize them](https://docs.openmc.org/en/stable/usersguide/tallies.html#normalization-of-tally-results). If you are not going to normalize them like this, then at least normalize the plot so that the data ranges from 0 to 1.
 
 - Be VERY careful about the difference between "validation" and "verification." Verification is anything where a comparison is made to another code, to an analytic solution, etc. ONLY validation refers to comparison against real-world, physical data like from an experiment. You are NOT validating code A if the results match code B.
+- You need to _explain_ all results. When introducing a figure, for instance, you should:
+  - Clearly state what is being shown (e.g., temperature as a function of rings).
+  - Give a physics justification for whether you trust the results (e.g., as expected, the temperature increases as the number of rings increases due to the spatial self-shielding).
