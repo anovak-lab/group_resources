@@ -25,3 +25,5 @@
 * Go get an iCard, then email Barb about getting added to the list of people who can access Talbot after-hours.
 
 * If you are an international student, open a bank account. You will need this for direct deposit.
+
+* For weekly meetings with Professor Novak, please sign up on her [in-person calendar](https://ajnovak2.youcanbook.me/) (preferred if possible) or [virtual calendar](https://ajnovak2-6.youcanbook.me/). Please sign up for meetings on Mondays and select a time immediately adjacent to an unavailable time on the calendar (so that you can leave open as many 1-hour slots as possible in case a student needs that much time).
