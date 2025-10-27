@@ -1,6 +1,6 @@
 import random
 
-students = ['Aya', 'Mohamed', 'Mahmoud', 'Michael', 'Kevin', 'Maria']
+students = ['Aya', 'Mohamed', 'Mahmoud', 'Michael', 'Kevin', 'Maria', 'Jamar', 'Stetson']
 
 r = random.randint(0, len(students) - 1)
 
