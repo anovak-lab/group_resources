@@ -37,7 +37,15 @@ This class introduces varies numerical methods for solving both hyperbolic and e
 
 ## TAM
 
-### TAM 570: Spectral Methods for CFD
+### Computational Mechanics (TAM 470)
+
+This course is a general numerical analysis course with a strong engineering focus. It covers key topics including interpolation, numerical differentiation and integration, numerical methods for ordinary differential equations, and numerical methods for partial differential equations, with an emphasis on finite difference methods and brief introductions to finite volume and finite element methods. Issues of accuracy and stability of numerical schemes are also addressed. The course content is well structured and comprehensive, and the instructor is excellent. The workload consists of 12 assignments of moderate difficulty, two coding projects, three quizzes, and a final exam. The exams are relatively easy, and the assignments require only basic Python knowledge. Overall, this is a very good course and one that I would highly recommend.
+
+### Turbulence (TAM 538)
+
+This course provides a theoretical introduction to turbulence and requires a prior course in fluid dynamics. It focuses primarily on the Reynolds-averaged Navier–Stokes (RANS) equations. Topics include statistical tools used in turbulence, mean flow equations, free shear flows, wall-bounded flows, and proper orthogonal decomposition. The course does not cover computational turbulence models. The course grade is based on three exams and a final project, with the project evaluated according to its potential to lead to a journal publication. I do not recommend this course due to the absence of computational turbulence modeling, which is essential for CFD. Additionally, the lack of regular assignments makes the material more difficult to grasp and places excessive pressure on the exams.
+
+### Spectral Methods for CFD (TAM 570)
 
 Spectral methods are one of the most efficient approaches to simulation of turbulent flows. In this course we learnt how and why these methods work. We wrote our own 3D spectral and multidomain spectral flow solvers in matlab. We covered the numerical analysis, iterative solvers, high-order semi-implicit timesteppers, fast matrix-free operator evaluation and inversion. We explored model problems from numerical analysis of PDEs to stability, transition, and turbulence in incompressible flows. The course had about 10 assignments and two projects. The two projects can be done using Nek5000/NekRS.
 
