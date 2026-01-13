@@ -1,7 +1,7 @@
 # Spring 2025 Semester
 
-- January 29:
-- February 5:
+- January 29: Introduction to git (April)
+- February 5: Computing radiation dose with OpenMC (April)
 - February 12:
 - February 19:
 - February 26:
