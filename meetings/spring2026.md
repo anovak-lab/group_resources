@@ -1,7 +1,7 @@
 # Spring 2025 Semester
 
 - January 29: Introduction to git (April)
-- February 5: Computing radiation dose with OpenMC (April)
+- February 5: Periodic flows with NekRS; convective units; initial conditions (April)
 - February 12: Random ray in Cardinal (Kevin)/variance reduction for SDR
 - February 19: Turbulence modeling with NekRS (April)
 - February 26: SAM tutorial (Michael)
