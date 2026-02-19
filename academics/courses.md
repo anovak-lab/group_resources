@@ -43,7 +43,7 @@ This course is a general numerical analysis course with a strong engineering foc
 
 ### Turbulence (TAM 538)
 
-This course provides a theoretical introduction to turbulence and requires a prior course in fluid dynamics. It focuses primarily on the Reynolds-averaged Navier–Stokes (RANS) equations. Topics include statistical tools used in turbulence, mean flow equations, free shear flows, wall-bounded flows, and proper orthogonal decomposition. The course does not cover computational turbulence models. The course grade is based on three exams and a final project, with the project evaluated according to its potential to lead to a journal publication. I do not recommend this course due to the absence of computational turbulence modeling, which is essential for CFD. Additionally, the lack of regular assignments makes the material more difficult to grasp and places excessive pressure on the exams.
+This course provides a theoretical introduction to turbulence and requires a prior course in fluid dynamics. It focuses primarily on the Reynolds-averaged Navier–Stokes (RANS) equations. Topics include statistical tools used in turbulence, mean flow equations, free shear flows, wall-bounded flows, and proper orthogonal decomposition. The course does not cover computational turbulence models. The course grade is based on three exams and a final project, with the project evaluated according to its potential to lead to a journal publication. This course lacks computational turbulence modeling, which is essential for CFD. Additionally, the lack of regular assignments makes the material more difficult to grasp and places excessive pressure on the exams.
 
 ### Spectral Methods for CFD (TAM 570)
 
