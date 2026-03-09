@@ -9,8 +9,8 @@
 - March 12: CANCELLED (Novak on travel)
 - March 19: CANCELLED (spring break)
 - March 26: Jamar, Stetson MHD in NekRS
-- April 2: Kevin, Connor Physor papers, lightning talk for ANS (Kennedy)
+- April 2: Kevin Physor paper, lightning talk for ANS (Kennedy)
 - April 9: CANCELLED (Novak at Columbia)
-- April 16: Kevin (1 Physor paper), Michael/Mahmoud (krusty paper)
+- April 16: Michael/Mahmoud (krusty paper)
 - April 23: CANCELLED (Physor)
 - April 30: CANCELLED (NETS)
