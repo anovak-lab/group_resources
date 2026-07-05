@@ -33,6 +33,52 @@ coreform_cubit
 
 When you're done using Cubit, please ensure you've closed Cubit (and all of it's sub-processes) before logging out of the fastx client. This stops processes from hanging and blocking other people from using Cubit due to the limited number of license seats.
 
+## Jupyter-Lab
+
+### Setup
+
+To setup jupyter-lab first start by installing jupyter-lab in your main conda environment,
+
+```
+conda install main::jupyter
+```
+
+### Connecting
+
+Pinchot does not have a GUI, so we will need to forward the jupyter-lab instance to local port. By default jupyter-lab is active on port 8888. This can be done by using the -L ssh option.
+
+If you are using the vpn or are on campus wifi:
+
+```
+ssh -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
+```
+
+If you are not using the vpn, it is possible to proxy jump through the universities linux.ews.illinois.edu server, provided you have a netid account.
+
+'''
+ssh -J <username>@pinchot.npre.illinois.edu -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
+'''
+
+Then run jupyter-lab. It is recommended to run it with the local browser disabled like so:
+
+```
+jupyter-lab --no-browser
+```
+
+Assuming you do not have a password set on jupyter-lab, the first time you connect to jupyter-lab remotely you will need it's associated token, this is generated when you run the above command and should looks something like:
+
+```
+http://localhost:8888/lab?token=<your token>
+http://127.0.0.1:8888/lab?token=<your token>
+```
+
+With the connection established, you can acces the jupyter-lab instance by openning up either of those links in your browser. Once that browser has the token, you can access the instance by simpling connecting to the associated port:
+
+```
+http://localhost:8888
+http://127.0.0.1:888
+```
+
 ## Getting Help
 
 If you need any assistance with this machine, send an email to: engrit-help@illinois.edu. For any help with the codes in `/shared/data`, please post in the group Slack channel.
