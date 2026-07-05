@@ -55,9 +55,9 @@ ssh -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
 
 If you are not using the vpn, it is possible to proxy jump through the universities linux.ews.illinois.edu server, provided you have a netid account.
 
-'''
-ssh -J <username>@pinchot.npre.illinois.edu -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
-'''
+```
+ssh -J <username>@linux.ews.illinois.edu -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
+```
 
 Then run jupyter-lab. It is recommended to run it with the local browser disabled like so:
 
