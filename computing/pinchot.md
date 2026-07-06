@@ -7,11 +7,90 @@ your NetID (replace for `ajnovak2`):
 ssh ajnovak2@pinchot.npre.illinois.edu
 ```
 
-If you are not on campus internet, you will need to be on the UIUC VPN. Instructions are
-[here](https://answers.uillinois.edu/illinois/page.php?id=47629). If you already have a VPN
-client, simply enter `vpn.illinois.edu` and "Connect."
+If you are not on campus internet, you will need to connect to the UIUC VPN or Use an ssh ProxyJump. VPN setup instructions are [here](https://answers.uillinois.edu/illinois/page.php?id=47629), and setting up an ssh ProxyJump is discussed later in this document. If you already have a VPN client, simply enter `vpn.illinois.edu` and "Connect."
 
 Once you are logged in, you will be in your home directory. Prof. Novak compiles various code projects in a shared location at `/shared/data`. If you want to use these pre-built codes, it is recommended to [add the corresponding executables to your `PATH`](https://phoenixnap.com/kb/linux-add-to-path).
+
+## ssh
+
+### ssh keys
+
+ssh keys allow you to securely login to a remote machine without typing a password. It's best practice to create separate ssh keys for each remote machine, so we'll create a new ssh key with:
+
+```bash
+# MacOS, Linux, \& Windows
+ssh-keygen -t ed25519 -N '' -f \~/.ssh/pinchot\_ed25519
+```
+
+This will create the files `\~/.ssh/pinchot\_ed25519` (your new private key) and `\~/.ssh/pinchot\_ed25519.pub` (your new public key). Your private ssh key is a lot like a password and should be treated as such.
+
+In order to use this ssh key you need to add the public ssh key to the remote machine:
+
+```bash
+# MacOS \& Linux
+ssh-copy-id -i \~/.ssh/pinchot\_ed25519 <NetID>@pinchot.npre.illinois.edu
+
+# Windows (PowerShell)
+Get-Content \~\\.ssh\\pinchot\_ed25519.pub | ssh <NetID>@pinchot.npre.illinois.edu "cat >> \~/.ssh/authorized\_keys"
+```
+
+Now you should be able to connect to pinchot without typing in your password by connecting with:
+
+```
+ssh -i \~/.ssh/pinchot\_ed25519 <NetID>@pinchot.npre.illinois.edu
+```
+
+### ssh ProxyJump
+
+ssh ProxyJumps can provide an alternative to the UIUC VPN which can allow you to connect without using the VPN (or even typing in any passwords, if setup correctly) at the cost of slightly increased latency. This works by first connecting to the campus EWS service, and then to pinchot.
+
+In its simplest form you simply add the `-J` option with the ProxyJump target:
+
+```
+ssh -J <NetID>@linux.ews.illinois.edu <NetID>@pinchot.npre.illinois.edu
+```
+
+By default this will prompt you for a password (your NetID password) to connect to `linux.ews.illinois.edu` and then a password to connect to `pinchot.npre.illinois.edu`. However both of these prompts can be skipped by setting up ssh keys as described above. If you've already setup an ssh key for `pinchot.npre.illinois.edu`, simply repeat the copy step but replace `pinchot.npre.illinois.edu` with `linux.ews.illinois.edu`, however since the `-i` effects the target server and not the jump server, you'll need to specify the ssh key in the ssh config file, as described in the next section.
+
+### ssh config
+
+Almost all the parameters specified on the command line we can specify in a config file: `\~/.ssh/config`. This file may not exist yet, and especially on windows, if you create it, make sure it doesn't end in `.txt`, since file explorer may hide the extension from you. Complete (albeit very technical) documentation for ssh config can be found [here](https://man7.org/linux/man-pages/man5/ssh_config.5.html). However below are the two expected use cases:
+
+If you're using ProxyJump:
+
+```
+Host pinchot
+  HostName pinchot.npre.illinois.edu
+  User <Your NetID> 
+  IdentityFile \~/.ssh/pinchot\_ed25519
+  ProxyJump ews
+
+Host ews
+  HostName linux.ews.illinois.edu
+  User <Your NetID>
+  IdentityFile \~/.ssh/pinchot\_ed25519
+```
+
+If you're **not** using ProxyJump:
+
+```
+Host pinchot
+  HostName pinchot.npre.illinois.edu
+  User <Your NetID> 
+  IdentityFile \~/.ssh/pinchot\_ed25519
+```
+
+Then you can connect by simply running:
+
+```
+ssh pinchot
+```
+
+### persistent ssh sessions with tmux
+
+Due to the design of the ssh protocol, if your network connection gets interrupted (laptop lid closed, switched wifi, solar flare, etc.) your ssh connection will drop and anything you were running on the server will be terminated. If you want to avoid this, you can run `tmux` to create a **t**erminal **mu**ltiple**x**er session. This will let you run programs in an environment separate from the ssh connection. You can detach from a session by pressing `ctrl-b` and then `d`, and reattach to a session after detaching or a broken ssh connection with `tmux attach`. You can also list existing sessions (if any) with `tmux ls`.
+
+Tmux is a powerful tool with lots of other features, but it's also very complicated, if you're curious, here's the [tmux getting started guide](https://github.com/tmux/tmux/wiki/Getting-Started) and here's a [cheatsheet of keybinds/commands](https://tmuxcheatsheet.com/).
 
 ## Cubit
 
@@ -28,7 +107,7 @@ rs-license-01.engrit.illinois.edu
 You can launch Cubit via the ubuntu shortcuts in "Activities" or by using the command:
 
 ```
-coreform_cubit
+coreform\_cubit
 ```
 
 When you're done using Cubit, please ensure you've closed Cubit (and all of it's sub-processes) before logging out of the fastx client. This stops processes from hanging and blocking other people from using Cubit due to the limited number of license seats.
@@ -37,7 +116,7 @@ When you're done using Cubit, please ensure you've closed Cubit (and all of it's
 
 ### Setup
 
-To setup jupyter-lab first start by installing jupyter-lab in your main conda environment,
+To setup jupyter-lab first start by installing jupyter-lab in your main conda environment:
 
 ```
 conda install main::jupyter
@@ -45,19 +124,23 @@ conda install main::jupyter
 
 ### Connecting
 
-Pinchot does not have a GUI, so we will need to forward the jupyter-lab instance to local port. By default jupyter-lab is active on port 8888. This can be done by using the -L ssh option.
-
-If you are using the vpn or are on campus wifi:
+Pinchot does not have a GUI, but we can connect to jupyter-lab's web interface over ssh using a port forward:
 
 ```
-ssh -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
+ssh -L 8888:localhost:8888 <NetID>@pinchot.npre.illinois.edu
 ```
 
-If you are not using the vpn, it is possible to proxy jump through the universities linux.ews.illinois.edu server, provided you have a netid account.
+If you're using an ssh config (recommended and detailed in the ssh section), simply add the line:
 
 ```
-ssh -J <username>@linux.ews.illinois.edu -L 8888:localhost:8888 <username>@pinchot.npre.illinois.edu
+  LocalForward 8888 localhost:8888
 ```
+
+to the pinchot host's configuration, and continue to connect as normal
+
+
+
+### Running
 
 Then run jupyter-lab. It is recommended to run it with the local browser disabled like so:
 
@@ -79,6 +162,9 @@ http://localhost:8888
 http://127.0.0.1:888
 ```
 
+You may want to run `jupyter-lab` in a `tmux` session, as detailed above in the ssh section.
+
 ## Getting Help
 
 If you need any assistance with this machine, send an email to: engrit-help@illinois.edu. For any help with the codes in `/shared/data`, please post in the group Slack channel.
+
