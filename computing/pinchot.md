@@ -15,7 +15,7 @@ Once you are logged in, you will be in your home directory. Prof. Novak compiles
 
 ### ssh keys
 
-ssh keys allow you to securely login to a remote machine without typing a password. It's best practice to create separate ssh keys for each remote machine, so we'll create a new ssh key with:
+ssh keys allow you to securely login to a remote machine without typing a password. ssh keys are also needed if you want to push/pull with a remote git repository via the ssh protocol. It's best practice to create separate ssh keys for each remote machine, so we'll create a new ssh key with the following (run this on Pinchot, for instance):
 
 ```bash
 # MacOS, Linux, \& Windows
