@@ -15,29 +15,29 @@ Once you are logged in, you will be in your home directory. Prof. Novak compiles
 
 ### ssh keys
 
-ssh keys allow you to securely login to a remote machine without typing a password. ssh keys are also needed if you want to push/pull with a remote git repository via the ssh protocol. It's best practice to create separate ssh keys for each remote machine, so we'll create a new ssh key with the following (run this on Pinchot, for instance):
+ssh keys allow you to securely login to a remote machine without typing a password. ssh keys are also needed if you want to push/pull with a remote repository via the ssh protocol ([github ssh-key guide]( https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)). It's best practice to create separate ssh keys for each remote machine, so we'll create a new ssh key with the following (run this on Pinchot, for instance):
 
 ```bash
-# MacOS, Linux, \& Windows
-ssh-keygen -t ed25519 -N '' -f \~/.ssh/pinchot\_ed25519
+# MacOS, Linux, & Windows
+ssh-keygen -t ed25519 -N '' -f ~/.ssh/pinchot_ed25519
 ```
 
-This will create the files `\~/.ssh/pinchot\_ed25519` (your new private key) and `\~/.ssh/pinchot\_ed25519.pub` (your new public key). Your private ssh key is a lot like a password and should be treated as such.
+This will create the files `~/.ssh/pinchot_ed25519` (your new private key) and `~/.ssh/pinchot_ed25519.pub` (your new public key). Your private ssh key is a lot like a password and should be treated as such.
 
 In order to use this ssh key you need to add the public ssh key to the remote machine:
 
 ```bash
 # MacOS \& Linux
-ssh-copy-id -i \~/.ssh/pinchot\_ed25519 <NetID>@pinchot.npre.illinois.edu
+ssh-copy-id -i ~/.ssh/pinchot_ed25519 <NetID>@pinchot.npre.illinois.edu
 
 # Windows (PowerShell)
-Get-Content \~\\.ssh\\pinchot\_ed25519.pub | ssh <NetID>@pinchot.npre.illinois.edu "cat >> \~/.ssh/authorized\_keys"
+Get-Content \~\\.ssh\\pinchot_ed25519.pub | ssh <NetID>@pinchot.npre.illinois.edu "cat >> \~/.ssh/authorized_keys"
 ```
 
 Now you should be able to connect to pinchot without typing in your password by connecting with:
 
 ```
-ssh -i \~/.ssh/pinchot\_ed25519 <NetID>@pinchot.npre.illinois.edu
+ssh -i ~/.ssh/pinchot_ed25519 <NetID>@pinchot.npre.illinois.edu
 ```
 
 ### ssh ProxyJump
@@ -54,7 +54,7 @@ By default this will prompt you for a password (your NetID password) to connect 
 
 ### ssh config
 
-Almost all the parameters specified on the command line we can specify in a config file: `\~/.ssh/config`. This file may not exist yet, and especially on windows, if you create it, make sure it doesn't end in `.txt`, since file explorer may hide the extension from you. Complete (albeit very technical) documentation for ssh config can be found [here](https://man7.org/linux/man-pages/man5/ssh_config.5.html). However below are the two expected use cases:
+Almost all the parameters specified on the command line we can specify in a config file: `~/.ssh/config`. This file may not exist yet, and especially on windows, if you create it, make sure it doesn't end in `.txt`, since file explorer may hide the extension from you. Complete (albeit very technical) documentation for ssh config can be found [here](https://man7.org/linux/man-pages/man5/ssh_config.5.html). However below are the two expected use cases:
 
 If you're using ProxyJump:
 
@@ -62,13 +62,13 @@ If you're using ProxyJump:
 Host pinchot
   HostName pinchot.npre.illinois.edu
   User <Your NetID> 
-  IdentityFile \~/.ssh/pinchot\_ed25519
+  IdentityFile ~/.ssh/pinchot_ed25519
   ProxyJump ews
 
 Host ews
   HostName linux.ews.illinois.edu
   User <Your NetID>
-  IdentityFile \~/.ssh/pinchot\_ed25519
+  IdentityFile ~/.ssh/pinchot_ed25519
 ```
 
 If you're **not** using ProxyJump:
@@ -77,7 +77,7 @@ If you're **not** using ProxyJump:
 Host pinchot
   HostName pinchot.npre.illinois.edu
   User <Your NetID> 
-  IdentityFile \~/.ssh/pinchot\_ed25519
+  IdentityFile ~/.ssh/pinchot_ed25519
 ```
 
 Then you can connect by simply running:
@@ -86,11 +86,25 @@ Then you can connect by simply running:
 ssh pinchot
 ```
 
-### persistent ssh sessions with tmux
+### Persistent ssh Sessions with tmux
 
 Due to the design of the ssh protocol, if your network connection gets interrupted (laptop lid closed, switched wifi, solar flare, etc.) your ssh connection will drop and anything you were running on the server will be terminated. If you want to avoid this, you can run `tmux` to create a **t**erminal **mu**ltiple**x**er session. This will let you run programs in an environment separate from the ssh connection. You can detach from a session by pressing `ctrl-b` and then `d`, and reattach to a session after detaching or a broken ssh connection with `tmux attach`. You can also list existing sessions (if any) with `tmux ls`.
 
 Tmux is a powerful tool with lots of other features, but it's also very complicated, if you're curious, here's the [tmux getting started guide](https://github.com/tmux/tmux/wiki/Getting-Started) and here's a [cheatsheet of keybinds/commands](https://tmuxcheatsheet.com/).
+
+Alternatively, you can use the command ```nohup``` to start programs in the background so that they don't end if you lose connection, similarly to tmux. Be aware that nohup does not read from standard input and redirects standard out to nohup.out. To specify that you'd like to run your program in the background, use this syntax to launch:
+
+```
+nohup <command> <options> &
+```
+
+You can select which file you'd like the output to be in by redirecting the output like so:
+
+```
+nohup <command> > <myfile.txt> &
+```
+
+Remeber to ```kill``` your nohup processes when you are done with them. You can use ```pgrep <command>``` to search for the process id. 
 
 ## Cubit
 
@@ -107,10 +121,11 @@ rs-license-01.engrit.illinois.edu
 You can launch Cubit via the ubuntu shortcuts in "Activities" or by using the command:
 
 ```
-coreform\_cubit
+coreform_cubit
 ```
 
 When you're done using Cubit, please ensure you've closed Cubit (and all of it's sub-processes) before logging out of the fastx client. This stops processes from hanging and blocking other people from using Cubit due to the limited number of license seats.
+
 
 ## Jupyter-Lab
 
