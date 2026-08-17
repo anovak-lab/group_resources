@@ -20,9 +20,9 @@
 
 * Ask Professor Novak to create a Google Doc for tracking research updates/meeting notes.
 
-* Talk with Barb Russell and/or Sarah Drum in Suite 100 Talbot about getting a key to 225D Talbot (the student office)
+* Fill out this form to request key access to the grad student office: [form](https://forms.gle/RcLtkBgQMRg11yZc8). Then, talk with Sarah Drum in Suite 100 Talbot about getting a key. Ask Professor Novak for the room number (either 225D or 224).
 
-* Go get an iCard, then email Barb about getting added to the list of people who can access Talbot after-hours.
+* Go get an iCard, then email Sarah about getting added to the list of people who can access Talbot after-hours.
 
 * If you are an international student, open a bank account. You will need this for direct deposit.
 
