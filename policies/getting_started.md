@@ -8,7 +8,7 @@
 
 * Ask Professor Novak if you should also request access to other HPC systems.
   - [OLCF](https://my.olcf.ornl.gov/account-application-new)
-  - [ANL LCRC](https://docs.lcrc.anl.gov/account-project-management/accounts-and-access/)
+  - [ANL LCRC](https://docs.lcrc.anl.gov/account-project-management/accounts-and-access/). For ANL, you will need a guest student account which you can request [here](https://apps.anl.gov/registration/collaborators/). Ask Professor Novak who you should list as your ANL point of contact.
 
 * Download the UIUC [VPN client](https://help.uillinois.edu/TDClient/42/UIUC/Requests/ServiceDet?ID=167). You will need to be signed in to the VPN if you want to access Pinchot from off-campus. Otherwise, you can access Pinchot just by being on the UIUC wifi ("Illinois Net").
 
