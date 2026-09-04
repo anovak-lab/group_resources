@@ -13,9 +13,41 @@ client, simply enter `vpn.illinois.edu` and "Connect."
 
 Once you are logged in, you will be in your home directory. Prof. Novak compiles various code projects in a shared location at `/shared/data`. If you want to use these pre-built codes, it is recommended to [add the corresponding executables to your `PATH`](https://phoenixnap.com/kb/linux-add-to-path).
 
+## Etiquette
+
+Pinchot is a shared resource in our group; as such, when using the machine
+please be aware of how many resources you are requesting. In general, aim
+to use around 1/3 to 1/4 of the machine (up to 36-48 threads or 18-24 ranks). You can see who else is on the machine by running the `top` command.
+When running OpenMC, by default it will try to use all the available threads
+on a machine (144); to prevent it from doing this, you can set the
+`OMP_NUM_THREADS` variable to cap the number of threads OpenMC will use. If you run OpenMC using the python API you can set it with `openmc.run(threads=36)`
+
+```
+export OMP_NUM_THREADS=36
+```
+
+If you have a special deadline, e.g. for a conference paper, ask in the
+general Slack channel to see if the group can allow you exclusive/larger
+resources for the lab. Try to support your fellow labmates by being
+flexible when deadlines are imposed.
+
+When using Cubit (discussed in next section), you *must* close the Cubit
+window through the FastX client - you cannot simply close the FastX client
+when you are done, it will not close Cubit. Our group has a limited number
+of seats, so if you linger in the Cubit instance it will prevent someone
+else from using it.
+
 ## Cubit
 
-Prof. Novak's group has a Cubit license, which can be accessed from Pinchot. In order to get a "screen" in order to interact with the Cubit GUI, first download the [fastx client](https://www.starnet.com/download/fastx-client) for whatever desktop operating system you have. As a reference, [this article](https://answers.illinois.edu/page.php?id=81727), in the "Connect with the desktop client" section, shows the buttons and steps needed to complete the remaining instructions. You'll use `pinchot.npre.illinois.edu` as the `Host` in the GUI.
+Prof. Novak's group has a Cubit license, which can be accessed from Pinchot. This is a fully-feature Cubit license, and does not place any constraints on the number of elements which can be exported.
+Note that there is a [FREE version of Cubit](https://coreform.com/downloads/) for educational use. This version is only limited in that it can only
+export meshes with less than 50,000 elements. If you are dealing with
+larger meshes, an option to reduce the demand for the Pinchot Cubit license
+is to create the journal files or `.cub` files using the free version on
+your machine, and then just copy those files to Pinchot for exporting
+when a seat opens up on the Pinchot version of Cubit.
+
+In order to get a "screen" in order to interact with the Cubit GUI, first download the [fastx client](https://www.starnet.com/download/fastx-client) for whatever desktop operating system you have. As a reference, [this article](https://answers.illinois.edu/page.php?id=81727), in the "Connect with the desktop client" section, shows the buttons and steps needed to complete the remaining instructions. You'll use `pinchot.npre.illinois.edu` as the `Host` in the GUI.
 
 Once installed, add a new a connection by clicking the 'plus' sign and using `pinchot.npre.illinois.edu` as the Host and `22` as the Port. Then, launch a session using "Default Desktop." Once it is launched, you can use it like a regular GUI system. The hostname and port number you should use when opening Cubit for the first time are:
 
