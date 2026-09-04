@@ -19,8 +19,8 @@ Pinchot is a shared resource in our group; as such, when using the machine
 please be aware of how many resources you are requesting. In general, aim
 to use around 1/3 to 1/4 of the machine (up to 36-48 threads or 18-24 ranks). You can see who else is on the machine by running the `top` command.
 When running OpenMC, by default it will try to use all the available threads
-on a machine (144); to present it from doing this, you can set the
-`OMP_NUM_THREADS` variable to cap the number of threads OpenMC will use.
+on a machine (144); to prevent it from doing this, you can set the
+`OMP_NUM_THREADS` variable to cap the number of threads OpenMC will use. If you run OpenMC using the python API you can set it with `openmc.run(threads=36)`
 
 ```
 export OMP_NUM_THREADS=36
