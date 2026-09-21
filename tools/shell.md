@@ -37,12 +37,23 @@ There are other important aspects of using shell commands that will help you be 
 - When you are typing out something, you can use tab completion to fill out the rest of the content - your terminal will try to match the letters you've typed against possible fits in the location where you are searching.
 - You can tab up/down in order to get back commands you've already entered on the command line.
 - Your home directory can be written as `~`.
+- The `*` is a wildcard and will catch all possible matches.
 - You can use braces to duplicate text to reduce your typing. For instance, the following two commands are the same.
 
 ```
 mv file.txt new_name.txt
 mv {file,new_name}.txt
 ```
+
+- Whenever you read code documentation and you see something in brackets like `<this>`, that `<this>` indicates you
+are supposed to replace the entire quantity with whatever is relevant to you (it's like a placeholder used for
+illustration). For example, a documentation page describing how to use `cd` may have something like
+
+```
+cd <a location>
+```
+
+which means that you are to replace the `<a location>` entire thing with where you want to go, like `cd projects`.
 
 ## Environment Variables
 
@@ -153,9 +164,100 @@ Then save and close the file. Now, when you open a second terminal and print `en
 
 You're going to extensively use the `.bashrc` and `.zshrc` to set environment variables - these variables are important for configuring a system, especially for adding locations to your `PATH` or loading modules.
 
+## Compiled Languages
+
+When working with a project based on a compiled language, you will need to build an executable before you
+can run that code - OpenMC, Cardinal, MOOSE, NekRS are all based on C++ and hence you need to generate an
+executable before you can run these codes. These codes will all have instructions for how to generate
+an executable. For example, for Cardinal [see here](https://cardinal.cels.anl.gov/without_conda.html).
+You only need to compile the code one time, unless you change the source code in which case you will need
+to recompile if you want to see those changes take effect.
+
+Some code projects (MOOSE and Cardinal) have additional dependencies that you build first before compiling
+MOOSE/Cardinal (e.g. libMesh, PETSc, wasp). You do not need to re-compile the entire software stack if you
+change a part of a code that builds "on top of" lower-down dependencies. For instance, if you change the source
+code in MOOSE, you do not need to re-build libMesh, PETSc, or wasp because MOOSE builds on top of those (you
+did not change the source code in libMesh, PETSc, or wasp).
+
 ## Remote Servers and HPC Systems
 
 Accessing a remote server or HPC system is typically done through an ssh connection from
 a terminal on your local computer. When you login to one of these remote systems, that
 terminal that you ran the `ssh` command from is now a terminal on that remote system. So,
 all the shell commands you are typing are being run on that remote computer.
+
+Just like your local computer has a `.bashrc`, so does the remote computer - you'll want to
+put commands in that file to load modules and perhaps modify your `PATH`.
+
+You have individual home directories on systems like Pinchot (server in our group) or any
+other HPC system that you have access to. In general you cannot see things in other home
+directories, but you can put shared data in `/shared/data` on Pinchot.
+
+### File Transfers
+
+You may find yourself wanting to transfer files between the remote computer and your local computer.
+You will use `scp`, which you always want to call from your local computer. In other words, from a
+terminal which is open on your local computer,
+
+```
+scp <full path to file you are sending> <full path to where you want to write that file>
+```
+
+So, to copy a file from my home directory on Pinchot to wherever I am currently sitting on my local computer,
+
+```
+scp ajnovak2@pinchot.npre.illinois.edu:/home/anovak/a_file.txt .
+```
+
+where the `.` is your current location. But you could also transfer a file to somewhere non-local on your local
+computer by typing out a different destination.
+
+```
+scp ajnovak2@pinchot.npre.illinois.edu:/home/anovak/a_file.txt projects/group_resources
+```
+
+The above command transfers a file from the remote computer to your local computer. For the other way
+around,
+
+```
+scp a_different_file.txt ajnovak2@pinchot.npre.illinois.edu:/home/anovak
+```
+
+Note that you can recursively copy entire directories with a wildcard symbol and the `-r` recusive symbol,
+
+```
+scp -r 'ajnovak2@pinchot.npre.illinois.edu:/home/ajnovak2/tritium-foam/coupling/coupled2/*' .
+```
+
+### Loading Modules
+
+Often, a remote server or HPC system is managed by an IT group who handles installation and compilation of common
+third-party dependencies that all the users of that system need (such as compilers, MPI, etc.). Many of these
+systems use something called Lmod. Read [this documentation](https://lmod.readthedocs.io/en/latest/010_user.html)
+to see the basic commands for Lmod.
+
+You can see available modules that character match with some keyword by typing
+
+```
+module spider mpi
+```
+
+You can then load a specific module by typing
+
+```
+module load <module name>
+```
+
+When you load a module, its location on the computer gets pre-pended to your `PATH`. Try loading a module
+and see how your `PATH` changes before and after you load the module. Be sure to put any module loads into
+your `.bashrc` so you don't forget next time you log in to the system!
+
+### HPC Systems
+
+On HPC systems, when you login to the system, you will be placed on a "login" node. This is a shared place
+where everyone lands when they login to the system. These nodes are *NOT* meant for running simulations - only
+for compiling code and basic file manipulations.
+
+Read [this documentation](https://cardinal.cels.anl.gov/hpc_build_run_tips.html) for information about
+running some of the software we use in our group on HPC systems, which will go into a bit more detail about
+modules and compilation.
