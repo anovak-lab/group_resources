@@ -65,6 +65,10 @@ coreform_cubit
 
 When you're done using Cubit, please ensure you've closed Cubit (and all of it's sub-processes) before logging out of the fastx client. This stops processes from hanging and blocking other people from using Cubit due to the limited number of license seats.
 
+### License update
+
+When it's time to update Cubit license, prof. Novak should follow the [offline activation instructions](https://coreform.com/activate/rlmserverinstall/#activate_offline) and download the license file, then attach that in the ticket when asking IT to activate the license on the RLM server.
+
 ## Jupyter-Lab
 
 ### Setup
