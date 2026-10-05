@@ -215,6 +215,15 @@ To undo a delete,
 redo
 ```
 
+If you use a long command, and want to save yourself some typing, you can revisit your command history by
+
+```
+q:
+<use up and down arrow keys to move through the command history>
+<press i to enter insert mode, if you want to modify the command, then escape>
+<enter key to run command>
+```
+
 ### `~/.vimrc` Configuration File
 
 A `~/.vimrc` is a configuration file, in your home directory, that you can use to customize
