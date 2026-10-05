@@ -179,12 +179,56 @@ change a part of a code that builds "on top of" lower-down dependencies. For ins
 code in MOOSE, you do not need to re-build libMesh, PETSc, or wasp because MOOSE builds on top of those (you
 did not change the source code in libMesh, PETSc, or wasp).
 
+## Finding files with `find`
+
+`find` is an extremely handy program you can use to find files or directories
+that match a regular expression. A "regular expression," or "regex" for short, uses
+wildcards (and other fancier syntax) to try to find matches. For instance, when typing
+
+```
+ls pr*
+```
+
+this command will return all files and directories in your current location that begin
+with the letters `pr` (and are followed by *anything* else) -- this is the meaning of
+the wildcard symbol, `*`. However, `ls` will only show you the contents in your immediate
+directory.
+
+To use `find` to find all possible matches in all recursive folders beneath your location,
+
+```
+find <where you want to search> -name "pr*"
+```
+
+which will list all file names that begin with `pr` and end in anything else. You can use
+the wildcard expression in-between pieces of text (with the `find` command or anywhere
+else you'd want to use the wildcard). For instance, to find all files which begin with
+the letters `pr` and end with the extension `.sample`,
+
+```
+find <where you want to search> -name "pr*.sample"
+```
+
+## Searching Inside Files with `grep`
+
+Sometimes it is also helpful to search for content inside of files; this is where the
+`grep` command comes in handy. To search recursively (`-r` flag) and ignore binary
+matches (`-I` flag), all files which contain the phrase `Problem`,
+
+```
+grep -rI "Problem" <where you want to search>
+```
+
 ## Remote Servers and HPC Systems
 
 Accessing a remote server or HPC system is typically done through an ssh connection from
 a terminal on your local computer. When you login to one of these remote systems, that
 terminal that you ran the `ssh` command from is now a terminal on that remote system. So,
 all the shell commands you are typing are being run on that remote computer.
+
+```
+ssh ajnovak2@pinchot.npre.illinois.edu
+```
 
 Just like your local computer has a `.bashrc`, so does the remote computer - you'll want to
 put commands in that file to load modules and perhaps modify your `PATH`.
@@ -251,6 +295,30 @@ module load <module name>
 When you load a module, its location on the computer gets pre-pended to your `PATH`. Try loading a module
 and see how your `PATH` changes before and after you load the module. Be sure to put any module loads into
 your `.bashrc` so you don't forget next time you log in to the system!
+
+### ssh Keys
+
+ssh keys are required to clone a git repository using either (i) https cloning or (ii) ssh cloning. The advantage of ssh cloning is that you can often skip entering a password for
+your GitHub account. ssh keys can also be used for other automated processes and
+function somewhat like passwords that authenticate your account (e.g. for GitHub) when
+you are on multiple different systems. [This page](https://www.ssh.com/academy/ssh-keys) provides
+an extensive discussion on ssh keys.
+
+We will describe ssh keys in the context of your GitHub account. To see your ssh keys
+tied to your GitHub account, go visit: (i) Profile, then (ii) SSH and GPG keys. You will
+in general have one ssh key per physical machine that you use; "physical machines" could
+include your laptop, Pinchot, Bitterroot, Frontier, Improv, etc.
+
+To generate a new ssh key, follow the "Generate new SSH key" instructions
+[here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent). Then, once you have generated this ssh
+key, copy the contents of the generated file, which will be named something like
+`id_<number>.pub`, and paste into GitHub where you are adding a new key. I recommend
+naming that key to be the name of the computer corresponding to that key.
+
+You will also have ssh keys associated with sites like GitLab, or sometimes for
+different account pages associated with HPC accounts. For instance, Argonne's
+[CELS accounts](https://accounts.cels.anl.gov/#/login) have ssh keys that are used to
+access various ANL resources.
 
 ### HPC Systems
 
