@@ -217,4 +217,72 @@ redo
 
 ### `~/.vimrc` Configuration File
 
+A `~/.vimrc` is a configuration file, in your home directory, that you can use to customize
+how vim will be used, such as
 
+- how to color different keywords
+- whether to highlight blank spaces in red (recommended because many software projects forbid the user of blank spaces at the ends of lines or blank lines at the ends of files, so that you don't end up with false positive line diffs when using git)
+- what color scheme to use, etc.
+
+Here is Professor Novak's `~/.vimrc`. You
+may want to uncomment the `set number` line (all comments in this file begin with `"`),
+which will show a line number to the left of each line for context.
+
+```
+"set number
+
+set mouse=a
+set cursorline
+
+set incsearch
+
+syntax on
+
+set tabstop=2 shiftwidth=2 expandtab
+
+set hlsearch
+
+set autoindent
+
+colorscheme desert
+
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+set laststatus=2
+set statusline=%f       "tail of the filename
+set statusline+=\ \%y
+set statusline+=%=      "right align
+set statusline+=Lines:\ \%L
+"set list
+"set listchars=tab:>-
+
+match ErrorMsg '\s\+$'
+set clipboard=unnamed
+```
+
+There are also other vim configuration files inside the `~/.vim` directory. For instance,
+you can configure vim to use syntax highlighting for files where vim doesn't know what
+programming language it is (this is helpful for NekRS, where vim may not recognized that e.g.
+files ending in `.oudf` are C++ code). To set this up, create (or edit, if you already have one), a `filetype.vim` file, to indicate a bunch of file extensions that vim should highlight
+as fortran vs. C++ (`cpp`), etc. This file would be named `~/.vim/filetype.vim`.
+
+```
+" highlight .usr file in fortran
+if exists("did_load_filetypes")
+  finish
+endif
+augroup filetypedetect
+  au! BufRead,BufNewFile *.usr          setfiletype fortran
+  au! BufRead,BufNewFile SIZE           setfiletype fortran
+  au! BufRead,BufNewFile SIZE.inc       setfiletype fortran
+  au! BufRead,BufNewFile NEKNEK         setfiletype fortran
+  au! BufRead,BufNewFile TOTAL          setfiletype fortran
+  au! BufRead,BufNewFile INPUT          setfiletype fortran
+  au! BufRead,BufNewFile GEOM           setfiletype fortran
+  au! BufRead,BufNewFile PARALLEL       setfiletype fortran
+  au! bufread,bufnewfile *.oud          setfiletype cpp
+  au! bufread,bufnewfile *.okl          setfiletype cpp
+  au! bufread,bufnewfile *.udf          setfiletype cpp
+  au! bufread,bufnewfile *.oudf         setfiletype cpp
+augroup END
+```
