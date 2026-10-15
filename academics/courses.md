@@ -28,6 +28,10 @@ This class presents historical approaches to fission reactor kinetics and dynami
 
 Theories and techniques of risk, safety, and reliability of complex systems and Probabilistic Risk Assessment (PRA), which provides input for risk-informed decision-making for design, operation, and regulatory oversight. Topics include: Systematic Risk Scenario Modeling, Consequence Analysis, Bayesian Updating, Bayesian Belief Network, Binary Decision Diagram, Uncertainty Propagation, Hardware Reliability, Human Error Modeling, Failure Causal Modeling, Maintenance and Repair Modeling, Risk Importance Ranking, and Data Analytics. The course material sacrifices depth for breadth, the software discussed is outdated, and the amount (not the difficulty) of the assignments is excessive. This is very much a busywork class. NPRE 461 one of the rare classes with an online section, which is valuable for some learners, but this should not be the first choice for in-person students in the M&M lab.
 
+### Advanced Design in NPRE (NPRE 558)
+
+This is the same class as NPRE 458 -- Design in NPRE which is what senior undergraduate student take for their capstone project. Generally not open for graduate students.
+
 ## CS
 
 ### Parallel Programming (CS 484, replaced CSE 402/CS 420/ECE 492)
